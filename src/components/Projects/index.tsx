@@ -64,7 +64,7 @@ const Projects = () => {
           <div
             key={index}
             ref={(el) => (projectCards.current[index] = el)}
-            className="bg-primary rounded-xl overflow-hidden transition-all duration-300 shadow-thick-solid hover:-translate-y-2"
+            className="bg-primary rounded-xl overflow-hidden transition-all duration-300 shadow-thick-solid hover:-translate-y-2 flex flex-col h-full"
           >
             <div className="relative overflow-hidden group">
               <img
@@ -72,29 +72,38 @@ const Projects = () => {
                 alt={project.title}
                 className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                <a href={project.demo} target="_blank">
-                  <button className="bg-white text-black px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-opacity-90 transition-colors duration-200">
-                    <span>View Project</span>
-                    <ArrowUpRight size={18} />
-                  </button>
-                </a>
-
-                <a href={project.repo} target="_blank">
-                  <button className="bg-white text-black px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-opacity-90 transition-colors duration-200">
-                    <span>Repository</span>
-                    <Github size={18} />
-                  </button>
-                </a>
-              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-grow">
               <h3 className="text-xl font-semibold mb-2 text-white">
                 {project.title}
               </h3>
-              <p className="text-slate-200">
-                {project.description}
-              </p>
+              <p className="text-slate-200 mb-4">{project.description}</p>
+              <div className="flex flex-wrap gap-3 mt-auto pt-6">
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <button className="w-full bg-white text-black px-3 py-2 rounded-lg flex items-center justify-center space-x-2 hover:bg-opacity-90 transition-colors duration-200">
+                    <span>View Project</span>
+                    <ArrowUpRight size={16} />
+                  </button>
+                </a>
+
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <button className="w-full bg-white text-black px-3 py-2 rounded-lg flex items-center justify-center space-x-2 hover:bg-opacity-90 transition-colors duration-200">
+                    <span>Repository</span>
+                    <Github size={16} />
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         ))}
