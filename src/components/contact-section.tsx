@@ -16,7 +16,7 @@ export function ContactSection() {
     {
       icon: Linkedin,
       title: "LinkedIn",
-      value: "linkedin.com/in/johndoe",
+      value: "linkedin.com/in/gemiyudhia",
       href: personalInfo.linkedin,
       color: "text-purple-400",
       borderColor: "hover:border-purple-400/50",
@@ -24,7 +24,7 @@ export function ContactSection() {
     {
       icon: Github,
       title: "GitHub",
-      value: "github.com/johndoe",
+      value: "github.com/gemiyudhia",
       href: personalInfo.github,
       color: "text-pink-400",
       borderColor: "hover:border-pink-400/50",
@@ -50,7 +50,7 @@ export function ContactSection() {
         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
           <Button
             asChild
-            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-10 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           >
             <Link href={`mailto:${personalInfo.email}`}>
               <Mail className="h-5 w-5 mr-2" />
@@ -60,7 +60,7 @@ export function ContactSection() {
           <Button
             variant="outline"
             asChild
-            className="border-2 border-gray-600 hover:bg-gray-700 bg-transparent hover:border-blue-400 px-8 py-4 text-lg rounded-full transition-all duration-300"
+            className="border-2 border-gray-600 hover:bg-gray-700 bg-transparent hover:border-blue-400 px-10 py-6 text-lg rounded-full transition-all duration-300 hover:text-white"
           >
             <Link href={personalInfo.linkedin}>
               <Linkedin className="h-5 w-5 mr-2" />
@@ -75,7 +75,7 @@ export function ContactSection() {
             return (
               <div
                 key={index}
-                className={`p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700 ${method.borderColor} transition-colors duration-300`}
+                className={`p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700 ${method.borderColor} transition-colors duration-300 cursor-pointer`}
               >
                 <IconComponent
                   className={`h-8 w-8 ${method.color} mx-auto mb-4`}

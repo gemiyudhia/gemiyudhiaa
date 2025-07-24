@@ -6,7 +6,6 @@ export interface PersonalInfo {
   linkedin: string;
   github: string;
   profileImage: string;
-  cv: string;
 }
 
 export interface Stats {
@@ -23,21 +22,14 @@ export interface Approach {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: "John Doe",
-  title: "Full Stack Developer",
+  name: "Gemi Yudhia",
+  title: "Frontend Developer",
   description:
     "Passionate dalam menciptakan solusi digital yang inovatif dan user-friendly",
-  email: "john.doe@example.com",
-  linkedin: "https://linkedin.com/in/johndoe",
-  github: "https://github.com/johndoe",
+  email: "gemiyudhiaa@gmail.com",
+  linkedin: "https://linkedin.com/in/gemiyudhia",
+  github: "https://github.com/gemiyudhia",
   profileImage: "/placeholder.svg?height=200&width=200",
-  cv: "/john-doe-cv.pdf",
-};
-
-export const stats: Stats = {
-  projects: "50+",
-  experience: "3+",
-  clients: "25+",
 };
 
 export const approaches: Approach[] = [
