@@ -18,7 +18,7 @@ export function ProjectsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Featured Projects
+            Project Saya
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
           <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
@@ -71,7 +71,7 @@ export function ProjectsSection() {
                     variant="outline"
                     size="sm"
                     asChild
-                    className="border-gray-600 hover:bg-gray-700 bg-transparent hover:border-blue-400 transition-all duration-300 flex-1"
+                    className="border-gray-600 hover:bg-gray-700 bg-transparent hover:border-blue-400 transition-all duration-300 flex-1 hover:text-white text-white"
                   >
                     <Link href={project.github}>
                       <Github className="h-4 w-4 mr-2" />

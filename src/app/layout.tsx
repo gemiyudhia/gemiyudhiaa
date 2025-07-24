@@ -6,35 +6,37 @@ import "./globals.css";
 const inter = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export const metadata: Metadata = {
-  title: "John Doe - Full Stack Developer Portfolio",
+  title: "Gemi Yudhia - Frontend Developer Portfolio",
   description:
-    "Portfolio website showcasing modern web development projects and skills. Specialized in React, Next.js, and full-stack development.",
+    "Portfolio website showcasing modern web development projects and skills.",
+    icons: {
+      icon: "/images/icon.png"
+    },
   keywords: [
     "portfolio",
     "web developer",
-    "full stack",
     "react",
     "next.js",
     "javascript",
     "typescript",
   ],
-  authors: [{ name: "John Doe" }],
-  creator: "John Doe",
+  authors: [{ name: "Gemi Yudhia" }],
+  creator: "Gemi Yudhia",
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://johndoe-portfolio.vercel.app",
-    title: "John Doe - Full Stack Developer Portfolio",
+    url: "https://gemiyudhiaa.vercel.app",
+    title: "Gemi Yudhia - Frontend Developer Portfolio",
     description:
       "Portfolio website showcasing modern web development projects and skills.",
-    siteName: "John Doe Portfolio",
+    siteName: "Gemi Yudhia Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "John Doe - Full Stack Developer Portfolio",
+    title: "Gemi Yudhia - Frontend Developer Portfolio",
     description:
       "Portfolio website showcasing modern web development projects and skills.",
-    creator: "@johndoe",
+    creator: "@gemiyudhia",
   },
   robots: {
     index: true,

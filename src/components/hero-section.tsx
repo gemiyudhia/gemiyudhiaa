@@ -7,14 +7,14 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "#", label: "Email" },
+    { icon: Github, href: "https://github.com/gemiyudhia", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/gemiyudhia", label: "LinkedIn" },
+    { icon: Mail, href: "gemiyudhiaa@gmail.com", label: "Email" },
   ];
 
   return (
     <section
-      id="home"
+      id="beranda"
       className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center"
     >
       <div className="max-w-7xl mx-auto w-full">
@@ -22,7 +22,7 @@ export function HeroSection() {
           <div className="mb-8 relative">
             <div className="relative inline-block">
               <Image
-                src="/placeholder.svg?height=200&width=200"
+                src="/images/gemi.png"
                 alt="Profile"
                 width={200}
                 height={200}
@@ -58,7 +58,7 @@ export function HeroSection() {
               className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-10 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               <Link href="#projects">
-                View My Work
+                Lihat Hasil Kerja Saya
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

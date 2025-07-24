@@ -8,7 +8,7 @@ import { useState } from "react";
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = ["Home", "About", "Projects", "Contact"];
+  const navItems = ["Beranda", "Tentang", "Projects", "Kontak"];
 
   return (
     <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-lg border-b border-gray-800/50 z-50">

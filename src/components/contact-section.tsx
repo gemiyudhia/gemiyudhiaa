@@ -32,11 +32,11 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+    <section id="kontak" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Let&apos;s Work Together
+            Ayo Bekerja Sama
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
         </div>
@@ -54,7 +54,7 @@ export function ContactSection() {
           >
             <Link href={`mailto:${personalInfo.email}`}>
               <Mail className="h-5 w-5 mr-2" />
-              Send Email
+              Kirim Email
             </Link>
           </Button>
           <Button

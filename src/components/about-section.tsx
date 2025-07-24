@@ -2,11 +2,11 @@ import { approaches } from "@/data/personal-info";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+    <section id="tentang" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            About Me
+            Tentang Saya
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
         </div>
@@ -41,7 +41,7 @@ export function AboutSection() {
           <div className="space-y-8">
             <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8">
               <h4 className="text-xl font-semibold mb-6 text-center">
-                My Approach
+                Pendekatan Saya
               </h4>
               <div className="space-y-6">
                 {approaches.map((approach, index) => (

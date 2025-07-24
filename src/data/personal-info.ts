@@ -29,7 +29,7 @@ export const personalInfo: PersonalInfo = {
   email: "gemiyudhiaa@gmail.com",
   linkedin: "https://linkedin.com/in/gemiyudhia",
   github: "https://github.com/gemiyudhia",
-  profileImage: "/placeholder.svg?height=200&width=200",
+  profileImage: "/images/gemi.png",
 };
 
 export const approaches: Approach[] = [
