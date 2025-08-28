@@ -1,5 +1,5 @@
-import HeroSectionMobile from "@/components/mobile-components/HeroSectionMobile";
-import Navbar from "@/components/mobile-components/navbar";
+import HeroSectionMobile from "@/components/mobile-components/HeroSection";
+import Navbar from "@/components/mobile-components/Navbar";
 
 export default function HomePage() {
   return (

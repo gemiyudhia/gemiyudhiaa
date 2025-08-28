@@ -1,16 +1,28 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import HamburgerMenu from "../ui/HamburgerMenu";
+import Image from "next/image";
+
 const Navbar = () => {
+  const pathname = usePathname();
+
   return (
-    <header>
-      <nav className="flex items-center justify-between">
+    <header className="">
+      <nav className="flex items-center justify-between px-3">
         <div className="flex items-center gap-x-3">
-          <img src="./images/logo.png" alt="logo" className="w-10 h-10" />
-          <h1 className="text-[#212021] text-[16px] font-bold ">
+          <Image src="/images/logo.png" alt="logo" width={50} height={50} priority />
+          <h1 className="text-[#212021] text-[16px] font-bold w-[190px]">
             Gemi Yudhia
           </h1>
         </div>
+        {pathname === "/about-me" ? (
+          <HamburgerMenu />
+        ) : (
           <h1 className="text-[#212021] text-[16px] font-bold uppercase">
             frontend developer portfolio
           </h1>
+        )}
       </nav>
       <span className="block h-px w-full bg-[#212021] my-3"></span>
     </header>

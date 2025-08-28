@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react'
 
-const HastagSectionMobile = () => {
+const HastagSection = () => {
   return (
     <div className="mt-20">
       <div className="flex items-center justify-between gap-x-2">
@@ -40,4 +40,4 @@ const HastagSectionMobile = () => {
   );
 }
 
-export default HastagSectionMobile
+export default HastagSection

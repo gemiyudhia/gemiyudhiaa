@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const SeemoreMobile = () => {
+const SeemoreSection = () => {
   return (
     <div className="mt-4 flex items-center gap-x-2 justify-end">
       <Link href="/about-me">
@@ -16,4 +16,4 @@ const SeemoreMobile = () => {
   );
 };
 
-export default SeemoreMobile;
+export default SeemoreSection;
