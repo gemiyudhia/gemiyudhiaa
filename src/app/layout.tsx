@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: "Gemi Yudhia - Frontend Developer Portfolio",
   description:
     "Portfolio website showcasing modern web development projects and skills.",
-    icons: {
-      icon: "/images/icon.png"
-    },
+  icons: {
+    icon: "/images/logo.png",
+  },
   keywords: [
     "portfolio",
     "web developer",
@@ -57,8 +57,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="scroll-smooth bg-[#F6F6EF]">
+      <body className={inter.className}>
+        <div className="container mx-auto py-8">{children}</div>
+      </body>
     </html>
   );
 }
