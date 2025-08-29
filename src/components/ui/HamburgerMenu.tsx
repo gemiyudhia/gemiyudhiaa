@@ -16,18 +16,18 @@ const HamburgerMenu = () => {
         className="flex flex-col justify-between w-8 h-5.5"
       >
         <span
-          className={`block h-1.5 bg-[#212021] rounded ${
+          className={`block h-1 bg-[#212021] rounded ${
             isOpen ? "rotate-45 translate-y-2" : ""
           } transsition-all duration-300 ease-in-out`}
         ></span>
         <span
-          className={`block h-1.5 bg-[#212021] rounded ${
+          className={`block h-1 bg-[#212021] rounded ${
             isOpen ? "opacity-0" : "opacity-100"
           } transsition-all duration-300 ease-in-out`}
         ></span>
         <span
-          className={`block h-1.5 bg-[#212021] rounded ${
-            isOpen ? "-rotate-45 -translate-y-2" : ""
+          className={`block h-1 bg-[#212021] rounded ${
+            isOpen ? "-rotate-45 -translate-y-2.5" : ""
           } transsition-all duration-300 ease-in-out`}
         ></span>
       </button>

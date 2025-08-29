@@ -1,6 +1,6 @@
 import Image from "next/image";
-import SeemoreSection from "./SeemoreSection";
 import HastagSection from "./HastagSection";
+import SeemoreSection from "./SeemoreSection";
 
 const HeroSectionSection = () => {
   return (
