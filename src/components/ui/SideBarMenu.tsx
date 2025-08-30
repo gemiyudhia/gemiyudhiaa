@@ -38,9 +38,9 @@ const SideBarMenu = ({ isOpen, toggleMenu }: SideBarMenuProps) => {
       </button>
 
       <nav className="flex flex-col my-20 gap-y-8 text-white font-semibold">
-        <a href="">About me</a>
-        <a href="">Work</a>
-        <a href="">Contact</a>
+        <a href="/about-me">About me</a>
+        <a href="/work">Work</a>
+        <a href="/contact">Contact</a>
       </nav>
     </div>
   );

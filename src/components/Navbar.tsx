@@ -25,7 +25,9 @@ const Navbar = () => {
             Gemi Yudhia
           </h1>
         </div>
-        {pathname === "/about-me" ? (
+        {pathname === "/about-me" ||
+        pathname === "/work" ||
+        pathname === "/contact" ? (
           <HamburgerMenu />
         ) : (
           <h1 className="text-[#212021] text-[16px] font-bold uppercase">

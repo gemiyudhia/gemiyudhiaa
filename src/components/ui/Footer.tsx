@@ -24,7 +24,6 @@ const Footer = () => {
               width={40}
               height={40}
               priority
-              className="text-center"
             />
           </div>
           <div className="w-20 h-20 flex items-center justify-center border border-[#FFFFFF] rounded-full">
