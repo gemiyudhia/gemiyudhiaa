@@ -106,12 +106,12 @@ const ContactForm = () => {
             type="submit"
             className="bg-[#0838FF] rounded-[17px] px-3 py-5 w-[181px] h-[50px] text-white text-[17px] font-bold flex justify-evenly mt-14"
           >
-            Submit
+            Send message
             <Image
               src="/images/send.png"
-              alt="line"
-              width={30}
-              height={30}
+              alt="send icon"
+              width={40}
+              height={40}
               priority
             />
           </Button>

@@ -33,7 +33,7 @@ export const projectsData: Project[] = [
   {
     title: "Socialfy",
     description: "Website sosial media",
-    image: "/images/socialfy.jpeg",
+    image: "/images/socialfy.png",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
     github: "https://github.com/gemiyudhia/socialfy",
     demo: "https://socialfy-kohl.vercel.app/",
