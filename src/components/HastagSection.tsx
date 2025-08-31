@@ -1,16 +1,21 @@
-import Image from 'next/image';
-import React from 'react'
+import Image from "next/image";
+import React from "react";
 
-const HastagSection = () => {
+type HastagSectionProps = {
+  className?: string;
+};
+
+const HastagSection = ({ className }: HastagSectionProps) => {
   return (
-    <div className="mt-20">
-      <div className="flex items-center justify-between gap-x-2">
+    <div className={`mt-20 ${className}`}>
+      <div className="flex items-center justify-between gap-x-2 relative">
         <Image
           src="/images/link-icon.png"
           alt="link icon"
           width={100}
           height={100}
           priority
+          className="w-[100px] h-[100px] md:absolute md:w-[180px] md:h-[180px] md:left-22 md:-top-52"
         />
         <div>
           <div className="flex items-center gap-x-2 justify-end">
@@ -38,6 +43,6 @@ const HastagSection = () => {
       </div>
     </div>
   );
-}
+};
 
-export default HastagSection
+export default HastagSection;

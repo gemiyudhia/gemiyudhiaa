@@ -7,7 +7,7 @@ const WorkCard = () => {
   return (
     <div className="mt-20">
       <div className="flex justify-between items-center">
-        <h1 className="font-bold text-4xl text-[#212021]">My Work</h1>
+        <h1 className="font-bold text-4xl text-[#212021] md:text-amber-300">My Work</h1>
         <Image
           src="/images/seemore.png"
           alt="work image"
