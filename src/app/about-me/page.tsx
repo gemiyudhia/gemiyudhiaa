@@ -7,16 +7,23 @@ import Footer from "@/components/ui/Footer";
 const AboutMePage = () => {
   return (
     <>
-      <div className="px-3">
+      <div className="container mx-auto px-3">
         <Navbar />
-        <AboutCard />
+        <div className="md:grid md:grid-cols-2 md:gap-x-8">
+          <div className="md:col-span-1 md:col-start-1">
+            <AboutCard />
+          </div>
 
-        {/* Introduction section */}
-        <IntroductionSection />
+          <div className="md:col-span-2 md:row-start-2">
+            {/* Introduction section */}
+            <IntroductionSection />
+          </div>
 
-        {/* Get in touch */}
-
-        <GetInTouch />
+          <div className="md:col-span-1 md:row-start-1 md:col-start-2">
+            {/* Get in touch */}
+            <GetInTouch />
+          </div>
+        </div>
       </div>
       <Footer />
     </>

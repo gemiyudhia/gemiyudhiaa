@@ -61,9 +61,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth bg-[#F6F6EF]">
-      <body className={inter.className}>
-        <div className="container mx-auto">{children}</div>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

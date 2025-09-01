@@ -11,7 +11,7 @@ const GetInTouch = () => {
       <div className="mt-10 grid grid-cols-2 gap-5">
         {/* Instagram */}
         <Link href="https://www.instagram.com/yuudhia" target="_blank">
-          <div className="w-[189px] h-[180px] rounded-[36px] bg-linear-to-br from-[#E1306C] to-[#FD1D1D]">
+          <div className="w-full max-w-[189px] h-[180px] rounded-[36px] bg-gradient-to-br from-[#E1306C] to-[#FD1D1D]">
             <div className="p-4 flex flex-col justify-between h-full">
               <Image
                 src="/images/instagram-icon.png"
@@ -39,7 +39,7 @@ const GetInTouch = () => {
 
         {/* Linkedin */}
         <Link href="https://www.linkedin.com/in/gemiyudhia/" target="_blank">
-          <div className="w-[189px] h-[180px] rounded-[36px] bg-[#0838FF]">
+          <div className="w-full max-w-[189px] h-[180px] rounded-[36px] bg-[#0838FF]">
             <div className="p-4 flex flex-col justify-between h-full">
               <Image
                 src="/images/linkedin-icon.png"
@@ -67,7 +67,7 @@ const GetInTouch = () => {
 
         {/* Github */}
         <Link href="https://github.com/gemiyudhia" target="_blank">
-          <div className="w-[189px] h-[180px] rounded-[36px] bg-[#212021]">
+          <div className="w-full max-w-[189px] h-[180px] rounded-[36px] bg-[#212021]">
             <div className="p-4 flex flex-col justify-between h-full">
               <Image
                 src="/images/github-icon.png"

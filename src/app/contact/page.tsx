@@ -6,7 +6,7 @@ import React from 'react'
 const ContactMePage = () => {
   return (
     <>
-      <div className="px-3">
+      <div className="container mx-auto px-3">
         <Navbar />
         <ContactForm />
       </div>

@@ -9,33 +9,74 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <header className="pt-8">
-      <nav className="flex items-center justify-between px-3">
-        <div className="flex items-center gap-x-3">
-          <Link href="/">
+    <header className="pt-4 md:pt-6 lg:pt-8">
+      <nav className="flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex items-center gap-x-2 sm:gap-x-3">
+          <Link href="/" className="flex-shrink-0">
             <Image
               src="/images/logo.png"
               alt="logo"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
+              className="sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
               priority
             />
           </Link>
-          <h1 className="text-[#212021] text-[16px] font-bold w-[190px]">
-            Gemi Yudhia
-          </h1>
+
+          {pathname === "/" ? (
+            <h1 className="text-[#212021] text-sm sm:text-base font-bold w-[160px] sm:w-[190px] md:hidden leading-tight">
+              Gemi Yudhia
+            </h1>
+          ) : (
+            <h1 className="text-[#212021] text-sm sm:text-base font-bold w-[160px] sm:w-[190px] md:hidden leading-tight">
+              Gemi Yudhia
+            </h1>
+          )}
+
+          <div className="hidden md:flex items-center gap-x-6 lg:gap-x-9 ml-3 lg:ml-5 font-normal text-xl lg:text-2xl">
+            <Link
+              href="/about-me"
+              className="hover:text-gray-600 transition-colors duration-200"
+            >
+              About me
+            </Link>
+            <Link
+              href="/work"
+              className="hover:text-gray-600 transition-colors duration-200"
+            >
+              Work
+            </Link>
+            <Link
+              href="/contact"
+              className="hover:text-gray-600 transition-colors duration-200"
+            >
+              Contact
+            </Link>
+          </div>
         </div>
-        {pathname === "/about-me" ||
-        pathname === "/work" ||
-        pathname === "/contact" ? (
-          <HamburgerMenu />
-        ) : (
-          <h1 className="text-[#212021] text-[16px] font-bold uppercase">
-            frontend developer portfolio
-          </h1>
-        )}
+
+        <div className="flex items-center gap-x-2 sm:gap-x-3">
+          {pathname !== "/" && (
+            <div className="md:hidden">
+              <HamburgerMenu />
+            </div>
+          )}
+
+          <div className="hidden md:block">
+            <h1 className="text-[#212021] text-xl lg:text-2xl font-bold">
+              Gemi Yudhia
+            </h1>
+          </div>
+
+          {pathname === "/" && (
+            <h1 className="text-[#212021] text-xs sm:text-sm font-bold uppercase md:hidden text-right leading-tight max-w-[140px] sm:max-w-[180px]">
+              frontend developer portfolio
+            </h1>
+          )}
+        </div>
       </nav>
-      <span className="block h-px w-full bg-[#212021] my-3"></span>
+
+      <span className="block h-px w-full bg-[#212021] my-2 sm:my-3 mx-3 sm:mx-4 md:mx-6 lg:mx-8"></span>
     </header>
   );
 };

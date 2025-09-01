@@ -5,9 +5,9 @@ import WorkCard from "@/components/WorkCard";
 const WorkPage = () => {
   return (
     <>
-      <div className="px-3">
+      <div className="container mx-auto px-3">
         <Navbar />
-       <WorkCard />
+        <WorkCard />
       </div>
 
       <Footer />
