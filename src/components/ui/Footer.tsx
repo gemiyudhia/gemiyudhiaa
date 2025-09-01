@@ -6,9 +6,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <div className="bg-[#212021] text-white relative overflow-hidden mt-20">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#212021] via-[#2a2829] to-[#212021] opacity-50"></div>
-
+    <div className="bg-[#212021] text-white overflow-hidden mt-20 min-h-full">
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
           <div className="text-center md:text-left">

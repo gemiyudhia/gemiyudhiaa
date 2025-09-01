@@ -39,7 +39,7 @@ const ContactForm = () => {
     console.log(values);
   }
   return (
-    <div className="mt-20">
+    <div className="mt-28 max-w-2xl mx-auto">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -68,7 +68,7 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-[#212021] font-bold ml-2 text-base">
-                  What's your email address??
+                  What's your email address?
                 </FormLabel>
                 <FormControl>
                   <Input
@@ -88,7 +88,7 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-[#212021] font-bold ml-2 text-base">
-                  What's your name message?
+                  What's your message?
                 </FormLabel>
                 <FormControl className="mt-3">
                   <Textarea
