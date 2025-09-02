@@ -5,13 +5,17 @@ import React from "react";
 const GetInTouch = () => {
   return (
     <>
-      <div className="mt-15">
+      <div className="mt-10 lg:mt-4">
         <h1 className="font-bold text-4xl">Get In Touch</h1>
       </div>
-      <div className="mt-10 grid grid-cols-2 gap-5">
+      <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-5 lg:gap-2">
         {/* Instagram */}
-        <Link href="https://www.instagram.com/yuudhia" target="_blank">
-          <div className="w-full max-w-[189px] h-[180px] rounded-[36px] bg-gradient-to-br from-[#E1306C] to-[#FD1D1D]">
+        <Link
+          href="https://www.instagram.com/yuudhia"
+          target="_blank"
+          className="max-w-[189px] h-[180px]"
+        >
+          <div className="w-full max-w-[189px] h-[180px] rounded-[36px] bg-gradient-to-br from-[#E1306C] to-[#FD1D1D] self-center">
             <div className="p-4 flex flex-col justify-between h-full">
               <Image
                 src="/images/instagram-icon.png"
@@ -38,7 +42,11 @@ const GetInTouch = () => {
         </Link>
 
         {/* Linkedin */}
-        <Link href="https://www.linkedin.com/in/gemiyudhia/" target="_blank">
+        <Link
+          href="https://www.linkedin.com/in/gemiyudhia/"
+          target="_blank"
+          className="max-w-[189px] h-[180px]"
+        >
           <div className="w-full max-w-[189px] h-[180px] rounded-[36px] bg-[#0838FF]">
             <div className="p-4 flex flex-col justify-between h-full">
               <Image
@@ -66,7 +74,11 @@ const GetInTouch = () => {
         </Link>
 
         {/* Github */}
-        <Link href="https://github.com/gemiyudhia" target="_blank">
+        <Link
+          href="https://github.com/gemiyudhia"
+          target="_blank"
+          className="max-w-[189px] h-[180px]"
+        >
           <div className="w-full max-w-[189px] h-[180px] rounded-[36px] bg-[#212021]">
             <div className="p-4 flex flex-col justify-between h-full">
               <Image

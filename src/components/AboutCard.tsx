@@ -1,7 +1,7 @@
 const AboutCard = () => {
   return (
-    <div className="mt-20">
-      <div className="bg-[#212021] h-[560px] w-full max-w-[400px] rounded-[36px] p-6">
+    <div className="mt-10 lg:mt-0 lg:h-full">
+      <div className="bg-[#212021] h-[560px] lg:h-[650px] w-full sm:max-w-[400px] rounded-[36px] p-6">
         <div className="text-white flex justify-between flex-col h-full">
           <div className="">
             <p className="font-light mb-3">Hello,</p>

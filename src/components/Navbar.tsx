@@ -29,7 +29,7 @@ const Navbar = () => {
             </h1>
           ) : (
             <h1 className="text-[#212021] text-sm sm:text-base font-bold w-[160px] sm:w-[190px] md:hidden leading-tight">
-              Gemi Yudhia
+              Frontend Developer Portfolio
             </h1>
           )}
 
