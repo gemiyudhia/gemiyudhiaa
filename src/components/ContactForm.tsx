@@ -18,9 +18,9 @@ import Image from "next/image";
 import { useState } from "react";
 
 const formSchema = z.object({
-  name: z.string().min(2, "Nama harus diisi").max(50),
-  email: z.string().email("Mohon gunakan email yang valid"),
-  message: z.string().min(10, "Pesan minimal 10 karakter"),
+  name: z.string().min(2, "Name must be at least 2 characters").max(50),
+  email: z.string().email("Please enter a valid email address"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
 });
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -84,7 +84,7 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-[#212021] font-bold ml-2 text-base">
-                  What's your name?
+                  What&apos;s your name?
                 </FormLabel>
                 <FormControl>
                   <Input
@@ -104,7 +104,7 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-[#212021] font-bold ml-2 text-base">
-                  What's your email address?
+                  What&apos;s your email address?
                 </FormLabel>
                 <FormControl>
                   <Input
@@ -124,7 +124,7 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-[#212021] font-bold ml-2 text-base">
-                  What's your message?
+                  What&apos;s your message?
                 </FormLabel>
                 <FormControl className="mt-3">
                   <Textarea
