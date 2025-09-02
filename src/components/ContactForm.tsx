@@ -22,6 +22,7 @@ const formSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
+
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
