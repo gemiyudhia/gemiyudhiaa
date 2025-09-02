@@ -23,6 +23,7 @@ const Navbar = () => {
             />
           </Link>
 
+          {/* Mobile title */}
           {pathname === "/" ? (
             <h1 className="text-[#212021] text-sm sm:text-base font-bold w-[160px] sm:w-[190px] md:hidden leading-tight">
               Gemi Yudhia
@@ -33,41 +34,68 @@ const Navbar = () => {
             </h1>
           )}
 
-          <div className="hidden md:flex items-center gap-x-6 lg:gap-x-9 ml-3 lg:ml-5 font-normal text-xl lg:text-2xl">
-            <Link
-              href="/about-me"
-              className="hover:text-gray-600 transition-colors duration-200"
-            >
-              About me
-            </Link>
-            <Link
-              href="/work"
-              className="hover:text-gray-600 transition-colors duration-200"
-            >
-              Work
-            </Link>
-            <Link
-              href="/contact"
-              className="hover:text-gray-600 transition-colors duration-200"
-            >
-              Contact
-            </Link>
-          </div>
+          {/* Desktop navigation - tampilkan navlinks jika BUKAN di route "/" */}
+          {pathname !== "/" && (
+            <div className="hidden md:flex items-center gap-x-6 lg:gap-x-9 ml-3 lg:ml-5 font-normal text-xl lg:text-2xl">
+              <Link
+                href="/about-me"
+                className="hover:text-gray-600 transition-colors duration-200 group relative"
+              >
+                About me
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#212021] transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+              <Link
+                href="/work"
+                className="hover:text-gray-600 transition-colors duration-200 group relative"
+              >
+                Work
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#212021] transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+
+              <Link
+                href="/contact"
+                className="hover:text-gray-600 transition-colors duration-200 group relative"
+              >
+                Contact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#212021] transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </div>
+          )}
+
+          {/* Desktop title - tampilkan "Gemi Yudhia" jika di route "/" */}
+          {pathname === "/" && (
+            <div className="hidden md:flex items-center ml-3 lg:ml-5">
+              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold">
+                Gemi Yudhia
+              </h1>
+            </div>
+          )}
         </div>
 
         <div className="flex items-center gap-x-2 sm:gap-x-3">
+          {/* Hamburger menu - hanya tampil di mobile dan bukan di route "/" */}
           {pathname !== "/" && (
             <div className="md:hidden">
               <HamburgerMenu />
             </div>
           )}
 
+          {/* Desktop right side */}
           <div className="hidden md:block">
-            <h1 className="text-[#212021] text-xl lg:text-2xl font-bold">
-              Gemi Yudhia
-            </h1>
+            {pathname === "/" ? (
+              // Jika di route "/", tampilkan "Frontend Developer Portfolio"
+              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold">
+                Frontend Developer Portfolio
+              </h1>
+            ) : (
+              // Jika bukan di route "/", tampilkan "Gemi Yudhia"
+              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold">
+                Gemi Yudhia
+              </h1>
+            )}
           </div>
 
+          {/* Mobile right side - hanya tampil di route "/" */}
           {pathname === "/" && (
             <h1 className="text-[#212021] text-xs sm:text-sm font-bold uppercase md:hidden text-right leading-tight max-w-[140px] sm:max-w-[180px]">
               frontend developer portfolio
