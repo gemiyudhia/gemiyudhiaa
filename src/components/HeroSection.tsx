@@ -7,7 +7,7 @@ const HeroSectionSection = () => {
     <>
       {/* Hero Section */}
       <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="md:flex md:justify-center md:items-center md:gap-x-8 lg:gap-x-12 xl:gap-x-16 max-w-7xl mx-auto">
+        <div className="md:flex md:justify-center md:items-center md:gap-x-8 lg:gap-x-12 xl:gap-x-16 max-w-7xl mx-auto lg:mx-36">
           {/* Hero Image */}
           <div className="flex justify-center md:justify-end md:flex-1 order-1 md:order-2">
             <Image

@@ -8,7 +8,6 @@ const AboutMePage = () => {
   return (
     <>
       <div className="container mx-auto px-3">
-        <Navbar />
         <div className="md:grid md:grid-cols-2 md:gap-x-8 lg:grid lg:grid-cols-3 lg:gap-2 mt-20">
           <div className="md:col-span-1 md:col-start-1 lg:col-span-1 lg:row-span-3">
             <AboutCard />
