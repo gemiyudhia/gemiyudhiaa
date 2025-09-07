@@ -1,36 +1,126 @@
+"use client";
+
+import { AnimationGeneratorType, motion } from "framer-motion";
 import AboutCard from "@/components/AboutCard";
 import GetInTouch from "@/components/GetInTouch";
 import IntroductionSection from "@/components/IntroductionSection";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/ui/Footer";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+    scale: 0.95,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring" as AnimationGeneratorType,
+      stiffness: 100,
+      damping: 15,
+      duration: 0.6,
+    },
+  },
+};
+
+const dividerVariants = {
+  hidden: { scaleX: 0, opacity: 0 },
+  visible: {
+    scaleX: 1,
+    opacity: 1,
+    transition: {
+      type: "spring" as AnimationGeneratorType,
+      stiffness: 120,
+      damping: 20,
+      delay: 0.8,
+    },
+  },
+};
 
 const AboutMePage = () => {
   return (
     <>
-      <div className="container mx-auto px-3">
-        <div className="md:grid md:grid-cols-2 md:gap-x-8 lg:grid lg:grid-cols-3 lg:gap-2 mt-20">
-          <div className="md:col-span-1 md:col-start-1 lg:col-span-1 lg:row-span-3">
+      <motion.div
+        className="container mx-auto px-3"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div
+          className="md:grid md:grid-cols-2 md:gap-x-8 lg:grid lg:grid-cols-3 lg:gap-2 mt-20"
+          variants={containerVariants}
+        >
+          <motion.div
+            className="md:col-span-1 md:col-start-1 lg:col-span-1 lg:row-span-3"
+            variants={itemVariants}
+            whileHover={{
+              scale: 1.02,
+              transition: { type: "spring", stiffness: 300, damping: 20 },
+            }}
+          >
             <AboutCard />
-          </div>
+          </motion.div>
 
-          <div className="md:col-span-2 md:row-start-2 lg:col-span-2 lg:col-start-2 lg:row-start-1">
-            {/* Introduction section */}
+          <motion.div
+            className="md:col-span-2 md:row-start-2 lg:col-span-2 lg:col-start-2 lg:row-start-1"
+            variants={itemVariants}
+          >
             <IntroductionSection />
-          </div>
+          </motion.div>
 
-          {/* Divider */}
-          <div className="md:col-span-2 md:row-start-3 lg:col-span-2 lg:col-start-2 lg:row-start-2">
+          <motion.div
+            className="md:col-span-2 md:row-start-3 lg:col-span-2 lg:col-start-2 lg:row-start-2"
+            variants={itemVariants}
+          >
             <div className="px-3 sm:px-4 md:px-6 lg:px-0">
-              <span className="block h-px w-full bg-[#7B7B7B] mt-8 mb-4"></span>
+              <motion.span
+                className="block h-px w-full bg-gradient-to-r from-transparent via-[#7B7B7B] to-transparent mt-8 mb-4 relative"
+                variants={dividerVariants}
+                style={{ originX: 0 }}
+                whileInView={{
+                  boxShadow: [
+                    "0 0 0px rgba(123, 123, 123, 0)",
+                    "0 0 20px rgba(123, 123, 123, 0.3)",
+                    "0 0 0px rgba(123, 123, 123, 0)",
+                  ],
+                }}
+                transition={{
+                  boxShadow: {
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatType: "reverse",
+                  },
+                }}
+              />
             </div>
-          </div>
+          </motion.div>
 
-          <div className="md:col-span-1 md:row-start-1 md:col-start-2 lg:col-span-2 lg:col-start-2 lg:row-start-3">
-            {/* Get in touch */}
+          <motion.div
+            className="md:col-span-1 md:row-start-1 md:col-start-2 lg:col-span-2 lg:col-start-2 lg:row-start-3"
+            variants={itemVariants}
+            whileHover={{
+              y: -5,
+              transition: { type: "spring", stiffness: 400, damping: 25 },
+            }}
+          >
             <GetInTouch />
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
       <Footer />
     </>
   );

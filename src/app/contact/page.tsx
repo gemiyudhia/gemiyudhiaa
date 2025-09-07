@@ -1,5 +1,4 @@
 import ContactForm from '@/components/ContactForm'
-import Navbar from '@/components/Navbar'
 import Footer from '@/components/ui/Footer';
 import React from 'react'
 

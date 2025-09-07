@@ -1,97 +1,249 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const Footer = () => {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState(2024); // Default fallback value
+  const [isClient, setIsClient] = useState(false);
+
+  // Generate consistent star positions
+  const starPositions = Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    x: (i * 113) % 1200, // Deterministic positioning
+    y: (i * 87) % 400,
+    duration: 2 + (i % 3),
+    delay: (i * 0.3) % 2,
+  }));
+
+  useEffect(() => {
+    setIsClient(true);
+    setYear(new Date().getFullYear());
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const socialVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "backOut",
+      },
+    },
+  };
+
+  const navVariants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
-    <div className="bg-[#212021] text-white overflow-hidden mt-20 min-h-full">
-      <div className="container mx-auto px-6 py-16 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
-          <div className="text-center md:text-left">
-            <h1 className="font-bold text-2xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Gemi Yudhia
-            </h1>
-            <p className="text-gray-400 text-sm mt-2 font-light tracking-wider">
-              Frontend Developer
-            </p>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <Link
-              href="https://instagram.com/yuudhia"
-              className="group w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 hover:border-gray-500 transition-all duration-300 hover:scale-110 hover:bg-gray-800/30"
-              aria-label="Instagram"
-            >
-              <Image
-                src="/images/instagram-icon.png"
-                alt="instagram"
-                width={20}
-                height={20}
-                className="group-hover:scale-110 transition-transform duration-300"
-              />
-            </Link>
-            <Link
-              href="https://linkedin.com/in/gemiyudhia"
-              className="group w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 hover:border-gray-500 transition-all duration-300 hover:scale-110 hover:bg-gray-800/30"
-              aria-label="LinkedIn"
-            >
-              <Image
-                src="/images/linkedin-icon.png"
-                alt="linkedin"
-                width={20}
-                height={20}
-                className="group-hover:scale-110 transition-transform duration-300"
-              />
-            </Link>
-            <Link
-              href="https://github.com/gemiyudhia"
-              className="group w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 hover:border-gray-500 transition-all duration-300 hover:scale-110 hover:bg-gray-800/30"
-              aria-label="GitHub"
-            >
-              <Image
-                src="/images/github-icon.png"
-                alt="github"
-                width={20}
-                height={20}
-                className="group-hover:scale-110 transition-transform duration-300"
-              />
-            </Link>
-          </div>
-
-          <nav className="flex items-center gap-8 text-sm">
-            <Link
-              href="/about-me"
-              className="text-gray-300 hover:text-white transition-all duration-300 relative group font-medium"
-            >
-              About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="/work"
-              className="text-gray-300 hover:text-white transition-all duration-300 relative group font-medium"
-            >
-              Work
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-300 hover:text-white transition-all duration-300 relative group font-medium"
-            >
-              Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          </nav>
-        </div>
-
-        <div className="text-center pt-8 border-t border-gray-700/50">
-          <p className="text-gray-500 text-xs font-light tracking-wide">
-            © {year} Gemi Yudhia. All rights reserved.
-          </p>
-        </div>
+    <motion.div
+      className="bg-[#212021] text-white overflow-hidden mt-20 min-h-full relative"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={containerVariants}
+    >
+      <div className="absolute inset-0 overflow-hidden">
+        {isClient &&
+          starPositions.map((star) => (
+            <motion.div
+              key={star.id}
+              className="absolute w-1 h-1 bg-white/10 rounded-full"
+              initial={{
+                x: star.x,
+                y: star.y,
+                opacity: 0,
+              }}
+              animate={{
+                y: [star.y, star.y - 100],
+                opacity: [0, 0.5, 0],
+              }}
+              transition={{
+                duration: star.duration,
+                repeat: Number.POSITIVE_INFINITY,
+                delay: star.delay,
+                ease: "linear",
+              }}
+            />
+          ))}
       </div>
-    </div>
+
+      <div className="container mx-auto px-6 py-16 relative z-10">
+        <motion.div
+          className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12"
+          variants={containerVariants}
+        >
+          <motion.div
+            className="text-center md:text-left"
+            variants={itemVariants}
+          >
+            <motion.h1
+              className="font-bold text-2xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.2 },
+              }}
+            >
+              Gemi Yudhia
+            </motion.h1>
+            <motion.p
+              className="text-gray-400 text-sm mt-2 font-light tracking-wider"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              Frontend Developer
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            className="flex items-center gap-4"
+            variants={containerVariants}
+          >
+            {[
+              {
+                href: "https://instagram.com/yuudhia",
+                src: "/images/instagram-icon.png",
+                alt: "instagram",
+                label: "Instagram",
+              },
+              {
+                href: "https://linkedin.com/in/gemiyudhia",
+                src: "/images/linkedin-icon.png",
+                alt: "linkedin",
+                label: "LinkedIn",
+              },
+              {
+                href: "https://github.com/gemiyudhia",
+                src: "/images/github-icon.png",
+                alt: "github",
+                label: "GitHub",
+              },
+            ].map((social, index) => (
+              <motion.div key={social.alt} variants={socialVariants}>
+                <Link
+                  href={social.href}
+                  className="group w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 hover:border-gray-500 transition-all duration-300"
+                  aria-label={social.label}
+                >
+                  <motion.div
+                    whileHover={{
+                      scale: 1.2,
+                      rotate: 5,
+                      transition: { duration: 0.2 },
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-12 h-12 flex items-center justify-center rounded-full hover:bg-gray-800/30 transition-all duration-300"
+                  >
+                    <Image
+                      src={social.src || "/placeholder.svg"}
+                      alt={social.alt}
+                      width={20}
+                      height={20}
+                      className="transition-transform duration-300"
+                    />
+                  </motion.div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.nav
+            className="flex items-center gap-8 text-sm"
+            variants={containerVariants}
+          >
+            {[
+              { href: "/about-me", label: "About me" },
+              { href: "/work", label: "Work" },
+              { href: "/contact", label: "Contact" },
+            ].map((nav, index) => (
+              <motion.div key={nav.label} variants={navVariants}>
+                <Link
+                  href={nav.href}
+                  className="text-gray-300 hover:text-white transition-all duration-300 relative group font-medium"
+                >
+                  <motion.span
+                    whileHover={{
+                      y: -2,
+                      transition: { duration: 0.2 },
+                    }}
+                    className="inline-block"
+                  >
+                    {nav.label}
+                  </motion.span>
+                  <motion.span
+                    className="absolute -bottom-1 left-0 h-0.5 bg-white"
+                    initial={{ width: 0 }}
+                    whileHover={{
+                      width: "100%",
+                      transition: { duration: 0.3, ease: "easeOut" },
+                    }}
+                  />
+                </Link>
+              </motion.div>
+            ))}
+          </motion.nav>
+        </motion.div>
+
+        <motion.div
+          className="text-center pt-8 border-t border-gray-700/50"
+          variants={itemVariants}
+        >
+          <motion.div
+            className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-8"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          />
+          <motion.p
+            className="text-gray-500 text-xs font-light tracking-wide"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            © {year} Gemi Yudhia. All rights reserved.
+          </motion.p>
+        </motion.div>
+      </div>
+    </motion.div>
   );
 };
 

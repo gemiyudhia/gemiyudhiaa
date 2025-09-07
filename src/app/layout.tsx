@@ -5,8 +5,8 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const inter = Poppins({
   subsets: ["latin"],
@@ -65,17 +65,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+
   return (
     <html lang="en" className="scroll-smooth bg-[#F6F6EF] ">
       <body className={inter.className}>
         <AnimatePresence mode="wait">
           <motion.div
-            key={pathname} // penting biar animasi jalan saat route berubah
+            key={pathname}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="container mx-auto px-3"
+            className="sticky top-0 z-50"
           >
             <Navbar />
           </motion.div>
