@@ -59,7 +59,7 @@ const AboutCard = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ delay: 1.3, duration: 0.6 }}
           >
             <p className="font-light text-[12px] text-right">
               I consider myself a dedicated frontend developer who continuously
