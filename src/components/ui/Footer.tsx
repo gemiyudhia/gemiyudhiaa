@@ -23,77 +23,23 @@ const Footer = () => {
     setYear(new Date().getFullYear());
   }, []);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const socialVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 20 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "backOut",
-      },
-    },
-  };
-
-  const navVariants = {
-    hidden: { opacity: 0, x: 20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <motion.div
       className="bg-[#212021] text-white overflow-hidden mt-20 min-h-full relative"
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
-      variants={containerVariants}
+      transition={{ staggerChildren: 0.2, delayChildren: 0.1 }}
     >
+      {/* Background stars */}
       <div className="absolute inset-0 overflow-hidden">
         {isClient &&
           starPositions.map((star) => (
             <motion.div
               key={star.id}
               className="absolute w-1 h-1 bg-white/10 rounded-full"
-              initial={{
-                x: star.x,
-                y: star.y,
-                opacity: 0,
-              }}
-              animate={{
-                y: [star.y, star.y - 100],
-                opacity: [0, 0.5, 0],
-              }}
+              initial={{ x: star.x, y: star.y, opacity: 0 }}
+              animate={{ y: [star.y, star.y - 100], opacity: [0, 0.5, 0] }}
               transition={{
                 duration: star.duration,
                 repeat: Number.POSITIVE_INFINITY,
@@ -104,14 +50,20 @@ const Footer = () => {
           ))}
       </div>
 
+      {/* Content */}
       <div className="container mx-auto px-6 py-16 relative z-10">
         <motion.div
           className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12"
-          variants={containerVariants}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ staggerChildren: 0.2, delayChildren: 0.1 }}
         >
+          {/* Logo + text */}
           <motion.div
             className="text-center md:text-left"
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <motion.h1
               className="font-bold text-2xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
@@ -132,10 +84,8 @@ const Footer = () => {
             </motion.p>
           </motion.div>
 
-          <motion.div
-            className="flex items-center gap-4"
-            variants={containerVariants}
-          >
+          {/* Social icons */}
+          <div className="flex items-center gap-4">
             {[
               {
                 href: "https://instagram.com/yuudhia",
@@ -155,8 +105,13 @@ const Footer = () => {
                 alt: "github",
                 label: "GitHub",
               },
-            ].map((social, index) => (
-              <motion.div key={social.alt} variants={socialVariants}>
+            ].map((social) => (
+              <motion.div
+                key={social.alt}
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "backOut" }}
+              >
                 <Link
                   href={social.href}
                   className="group w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 hover:border-gray-500 transition-all duration-300"
@@ -182,18 +137,21 @@ const Footer = () => {
                 </Link>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.nav
-            className="flex items-center gap-8 text-sm"
-            variants={containerVariants}
-          >
+          {/* Navigation */}
+          <div className="flex items-center gap-8 text-sm">
             {[
               { href: "/about-me", label: "About me" },
               { href: "/work", label: "Work" },
               { href: "/contact", label: "Contact" },
-            ].map((nav, index) => (
-              <motion.div key={nav.label} variants={navVariants}>
+            ].map((nav) => (
+              <motion.div
+                key={nav.label}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
                 <Link
                   href={nav.href}
                   className="text-gray-300 hover:text-white transition-all duration-300 relative group font-medium"
@@ -218,12 +176,15 @@ const Footer = () => {
                 </Link>
               </motion.div>
             ))}
-          </motion.nav>
+          </div>
         </motion.div>
 
+        {/* Footer bottom */}
         <motion.div
           className="text-center pt-8 border-t border-gray-700/50"
-          variants={itemVariants}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <motion.div
             className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-8"
