@@ -120,8 +120,24 @@ const Navbar = () => {
           {/* Desktop title - tampilkan "Gemi Yudhia" jika di route "/" */}
           {pathname === "/" && (
             <div className="hidden md:flex items-center ml-3 lg:ml-5">
-              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold">
-                Gemi Yudhia
+              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold flex cursor-pointer">
+                {"Gemi Yudhia".split("").map((char, i) => (
+                  <motion.span
+                    key={i}
+                    whileHover={{
+                      y: -5,
+                      color: "#0838FF",
+                      transition: {
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      },
+                    }}
+                    className="inline-block"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
               </h1>
             </div>
           )}
@@ -138,14 +154,44 @@ const Navbar = () => {
           {/* Desktop right side */}
           <div className="hidden md:block">
             {pathname === "/" ? (
-              // Jika di route "/", tampilkan "Frontend Developer Portfolio"
-              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold">
-                Frontend Developer Portfolio
+              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold flex cursor-pointer">
+                {"Frontend Developer Portfolio".split("").map((char, i) => (
+                  <motion.span
+                    key={i}
+                    whileHover={{
+                      y: -5,
+                      color: "#0838FF",
+                      transition: {
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      },
+                    }}
+                    className="inline-block"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
               </h1>
             ) : (
-              // Jika bukan di route "/", tampilkan "Gemi Yudhia"
-              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold">
-                Gemi Yudhia
+              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold flex cursor-pointer">
+                {"Gemi Yudhia".split("").map((char, i) => (
+                  <motion.span
+                    key={i}
+                    whileHover={{
+                      y: -5,
+                      color: "#0838FF",
+                      transition: {
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      },
+                    }}
+                    className="inline-block"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
               </h1>
             )}
           </div>
@@ -159,7 +205,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <span className="block h-px w-full bg-[#212021] my-2 sm:my-3"></span>
+      <span className="block h-px container mx-auto bg-[#212021] my-2 sm:my-3"></span>
     </header>
   );
 };

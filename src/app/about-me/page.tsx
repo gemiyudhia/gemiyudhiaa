@@ -77,6 +77,9 @@ const AboutMePage = () => {
           <motion.div
             className="md:col-span-2 md:row-start-2 lg:col-span-2 lg:col-start-2 lg:row-start-1"
             variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
           >
             <IntroductionSection />
           </motion.div>
@@ -111,6 +114,9 @@ const AboutMePage = () => {
           <motion.div
             className="md:col-span-1 md:row-start-1 md:col-start-2 lg:col-span-2 lg:col-start-2 lg:row-start-3"
             variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
             whileHover={{
               y: -5,
               transition: { type: "spring", stiffness: 400, damping: 25 },
