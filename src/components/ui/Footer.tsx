@@ -6,20 +6,9 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const Footer = () => {
-  const [year, setYear] = useState(2024); // Default fallback value
-  const [isClient, setIsClient] = useState(false);
-
-  // Generate consistent star positions
-  const starPositions = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    x: (i * 113) % 1200, // Deterministic positioning
-    y: (i * 87) % 400,
-    duration: 2 + (i % 3),
-    delay: (i * 0.3) % 2,
-  }));
+  const [year, setYear] = useState<number>();
 
   useEffect(() => {
-    setIsClient(true);
     setYear(new Date().getFullYear());
   }, []);
 
@@ -31,25 +20,6 @@ const Footer = () => {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ staggerChildren: 0.2, delayChildren: 0.1 }}
     >
-      {/* Background stars */}
-      <div className="absolute inset-0 overflow-hidden">
-        {isClient &&
-          starPositions.map((star) => (
-            <motion.div
-              key={star.id}
-              className="absolute w-1 h-1 bg-white/10 rounded-full"
-              initial={{ x: star.x, y: star.y, opacity: 0 }}
-              animate={{ y: [star.y, star.y - 100], opacity: [0, 0.5, 0] }}
-              transition={{
-                duration: star.duration,
-                repeat: Number.POSITIVE_INFINITY,
-                delay: star.delay,
-                ease: "linear",
-              }}
-            />
-          ))}
-      </div>
-
       {/* Content */}
       <div className="container mx-auto px-6 py-16 relative z-10">
         <motion.div

@@ -22,7 +22,7 @@ const HamburgerMenu = () => {
         ></span>
         <span
           className={`block h-1 bg-[#212021] rounded ${
-            isOpen ? "opacity-0" : "opacity-100"
+            isOpen ? "scale-0" : "scale-100"
           } transsition-all duration-300 ease-in-out`}
         ></span>
         <span

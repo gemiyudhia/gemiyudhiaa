@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { User, Briefcase, Mail } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 type SideBarMenuProps = {
   isOpen: boolean;
@@ -10,6 +11,12 @@ type SideBarMenuProps = {
 };
 
 const SideBarMenu = ({ isOpen, toggleMenu }: SideBarMenuProps) => {
+  const [year, setYear] = useState<number>();
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   const navItems = [
     { href: "/about-me", label: "About me", icon: User },
     { href: "/work", label: "Work", icon: Briefcase },
@@ -76,7 +83,7 @@ const SideBarMenu = ({ isOpen, toggleMenu }: SideBarMenuProps) => {
 
         <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-slate-700/50">
           <p className="text-xs text-slate-500 text-center mt-3">
-            © 2024 Gemi Yudhia
+            © {year} Gemi Yudhia
           </p>
         </div>
       </div>
