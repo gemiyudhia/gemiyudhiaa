@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const AboutCard = () => {
   return (
@@ -11,14 +12,20 @@ const AboutCard = () => {
       transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       <motion.div
-        className="bg-[#212021] h-[560px] lg:h-[650px] w-full sm:max-w-[400px] rounded-[36px] p-6"
+        className="relative bg-[#212021] h-[560px] lg:h-[650px] w-full sm:max-w-[400px] rounded-[36px] p-6"
         whileHover={{
           scale: 1.02,
           boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <div className="text-white flex justify-between flex-col h-full">
+        <Image
+          src="/images/profile.png"
+          alt="profile"
+          fill
+          className="object-cover rounded-[36px]"
+        />
+        <div className="absolute inset-0 z-10 p-6 text-white flex justify-between flex-col h-full">
           <motion.div
             className=""
             initial={{ opacity: 0, x: -30 }}
