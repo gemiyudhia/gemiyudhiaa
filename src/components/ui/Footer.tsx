@@ -14,14 +14,14 @@ const Footer = () => {
 
   return (
     <motion.div
-      className="bg-[#212021] text-white overflow-hidden mt-20 min-h-full relative mb-6 rounded-2xl shadow"
+      className="bg-[#212021] text-white overflow-hidden mt-20 min-h-full relative md:mb-6 md:rounded-2xl shadow"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ staggerChildren: 0.2, delayChildren: 0.1 }}
     >
       {/* Content */}
-      <div className="container mx-auto px-6 py-16 relative z-10">
+      <div className="container mx-auto px-6 py-20 relative z-10">
         <motion.div
           className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12"
           initial={{ opacity: 0 }}

@@ -4,9 +4,9 @@ import WorkCard from "@/components/WorkCard";
 const WorkPage = () => {
   return (
     <>
-      <div className="container mx-auto px-3">
+      <div className="md:container md:mx-auto md:px-3">
         <WorkCard />
-      <Footer />
+        <Footer />
       </div>
     </>
   );

@@ -52,9 +52,8 @@ const dividerVariants = {
 
 const AboutMePage = () => {
   return (
-    <>
       <motion.div
-        className="container mx-auto px-3"
+        className="md:container md:mx-auto md:px-3"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -127,7 +126,6 @@ const AboutMePage = () => {
         </motion.div>
         <Footer />
       </motion.div>
-    </>
   );
 };
 
