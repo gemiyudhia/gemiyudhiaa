@@ -6,8 +6,8 @@ const WorkPage = () => {
     <>
       <div className="container mx-auto px-3">
         <WorkCard />
-      </div>
       <Footer />
+      </div>
     </>
   );
 };

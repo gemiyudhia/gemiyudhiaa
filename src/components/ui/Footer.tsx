@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <motion.div
-      className="bg-[#212021] text-white overflow-hidden mt-20 min-h-full relative"
+      className="bg-[#212021] text-white overflow-hidden mt-20 min-h-full relative mb-6 rounded-2xl shadow"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}

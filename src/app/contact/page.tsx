@@ -7,8 +7,8 @@ const ContactMePage = () => {
     <>
       <div className="container mx-auto px-3">
         <ContactForm />
-      </div>
       <Footer />
+      </div>
     </>
   );
 }

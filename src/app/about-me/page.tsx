@@ -125,9 +125,8 @@ const AboutMePage = () => {
             <GetInTouch />
           </motion.div>
         </motion.div>
+        <Footer />
       </motion.div>
-
-      <Footer />
     </>
   );
 };
