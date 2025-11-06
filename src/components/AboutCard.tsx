@@ -20,7 +20,7 @@ const AboutCard = () => {
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <Image
-          src="/images/profile.png"
+          src="/images/gemi-yudhia.png"
           alt="profile"
           fill
           className="object-cover rounded-[36px]"
