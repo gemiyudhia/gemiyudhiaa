@@ -8,7 +8,8 @@ const GetInTouch = () => {
   const socialLinks = [
     {
       href: "https://www.instagram.com/yuudhia",
-      gradient: "from-[#E1306C] to-[#FD1D1D]",
+      gradient: "",
+      bgColor: "bg-white",
       icon: "/images/instagram-icon.png",
       text: "instagram.com/yuudhia",
       alt: "instagram image",
@@ -16,7 +17,7 @@ const GetInTouch = () => {
     {
       href: "https://www.linkedin.com/in/gemiyudhia/",
       gradient: "",
-      bgColor: "bg-[#0838FF]",
+      bgColor: "bg-white",
       icon: "/images/linkedin-icon.png",
       text: "linkedin.com/in/gemiyudhia",
       alt: "linkedin image",
@@ -24,7 +25,7 @@ const GetInTouch = () => {
     {
       href: "https://github.com/gemiyudhia",
       gradient: "",
-      bgColor: "bg-[#212021]",
+      bgColor: "bg-white",
       icon: "/images/github-icon.png",
       text: "github.com/gemiyudhia",
       alt: "github image",
@@ -72,7 +73,7 @@ const GetInTouch = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h1 className="font-bold text-4xl">Get In Touch</h1>
+        <h1 className="font-black text-5xl text-white uppercase">Get In Touch</h1>
       </motion.div>
 
       <motion.div
@@ -98,13 +99,13 @@ const GetInTouch = () => {
               className="block w-full h-full"
             >
               <motion.div
-                className={`w-full max-w-[189px] h-[180px] rounded-[36px] ${
+                className={`w-full max-w-[189px] h-[180px] border-4 border-white ${
                   social.gradient
                     ? `bg-gradient-to-br ${social.gradient}`
                     : social.bgColor
-                } self-center overflow-hidden`}
+                } self-center overflow-hidden hover:bg-[#FFCC00] hover:text-[#131313]`}
                 whileHover={{
-                  boxShadow: "0 15px 35px rgba(0, 0, 0, 0.3)",
+                  boxShadow: "0 15px 35px rgba(255, 204, 0, 0.4)",
                 }}
               >
                 <div className="p-4 flex flex-col justify-between h-full">
@@ -155,7 +156,7 @@ const GetInTouch = () => {
                       />
                     </motion.div>
                     <motion.h1
-                      className="font-light text-[10px] text-white text-right"
+                      className="font-bold text-[10px] text-[#131313] text-right uppercase"
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 1.1 + index * 0.1, duration: 0.4 }}

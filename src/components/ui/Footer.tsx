@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <motion.div
-      className="bg-[#212021] text-white overflow-hidden mt-20 min-h-full relative md:mb-6 md:rounded-2xl shadow"
+      className="bg-[#131313] text-white overflow-hidden mt-20 min-h-full relative md:mb-6 border-t-4 border-white shadow-2xl"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -36,16 +36,17 @@ const Footer = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <motion.h1
-              className="font-bold text-2xl tracking-wide bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+              className="font-black text-2xl tracking-wide text-white uppercase"
               whileHover={{
                 scale: 1.05,
+                color: "#FFCC00",
                 transition: { duration: 0.2 },
               }}
             >
               Gemi Yudhia
             </motion.h1>
             <motion.p
-              className="text-gray-400 text-sm mt-2 font-light tracking-wider"
+              className="text-white text-sm mt-2 font-bold tracking-wider uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
@@ -84,17 +85,18 @@ const Footer = () => {
               >
                 <Link
                   href={social.href}
-                  className="group w-12 h-12 flex items-center justify-center rounded-full border border-gray-700 hover:border-gray-500 transition-all duration-300"
+                  className="group w-12 h-12 flex items-center justify-center border-3 border-white hover:border-[#FFCC00] transition-all duration-300"
                   aria-label={social.label}
                 >
                   <motion.div
                     whileHover={{
                       scale: 1.2,
                       rotate: 5,
+                      backgroundColor: "#FFCC00",
                       transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-12 h-12 flex items-center justify-center rounded-full hover:bg-gray-800/30 transition-all duration-300"
+                    className="w-12 h-12 flex items-center justify-center hover:bg-[#FFCC00] transition-all duration-300"
                   >
                     <Image
                       src={social.src || "/placeholder.svg"}
@@ -124,11 +126,11 @@ const Footer = () => {
               >
                 <Link
                   href={nav.href}
-                  className="text-gray-300 hover:text-white transition-all duration-300 relative group font-medium"
+                  className="text-white hover:bg-white hover:text-[#131313] transition-all duration-300 relative group font-bold uppercase px-3 py-1 border-2 border-white"
                 >
                   <motion.span
                     whileHover={{
-                      y: -2,
+                      y: 0,
                       transition: { duration: 0.2 },
                     }}
                     className="inline-block"
@@ -136,10 +138,10 @@ const Footer = () => {
                     {nav.label}
                   </motion.span>
                   <motion.span
-                    className="absolute -bottom-1 left-0 h-0.5 bg-white"
+                    className="absolute -bottom-1 left-0 h-0 bg-white"
                     initial={{ width: 0 }}
                     whileHover={{
-                      width: "100%",
+                      width: 0,
                       transition: { duration: 0.3, ease: "easeOut" },
                     }}
                   />
@@ -151,20 +153,20 @@ const Footer = () => {
 
         {/* Footer bottom */}
         <motion.div
-          className="text-center pt-8 border-t border-gray-700/50"
+          className="text-center pt-8 border-t-4 border-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <motion.div
-            className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-8"
+            className="w-full h-1 bg-white mb-8"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut" }}
           />
           <motion.p
-            className="text-gray-500 text-xs font-light tracking-wide"
+            className="text-white text-xs font-bold tracking-wide uppercase"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

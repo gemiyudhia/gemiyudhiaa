@@ -89,14 +89,14 @@ const AboutMePage = () => {
           >
             <div className="px-3 sm:px-4 md:px-6 lg:px-0">
               <motion.span
-                className="block h-px w-full bg-gradient-to-r from-transparent via-[#7B7B7B] to-transparent mt-8 mb-4 relative"
+                className="block h-1 w-full bg-white mt-8 mb-4 relative"
                 variants={dividerVariants}
                 style={{ originX: 0 }}
                 whileInView={{
                   boxShadow: [
-                    "0 0 0px rgba(123, 123, 123, 0)",
-                    "0 0 20px rgba(123, 123, 123, 0.3)",
-                    "0 0 0px rgba(123, 123, 123, 0)",
+                    "0 0 0px rgba(255, 255, 255, 0)",
+                    "0 0 20px rgba(255, 204, 0, 0.4)",
+                    "0 0 0px rgba(255, 255, 255, 0)",
                   ],
                 }}
                 transition={{

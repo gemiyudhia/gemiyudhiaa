@@ -84,7 +84,7 @@ const ContactForm = () => {
           <AnimatePresence>
             {submitStatus === "success" && (
               <motion.div
-                className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded"
+                className="bg-[#FFCC00] border-4 border-white text-[#131313] px-4 py-3 font-bold"
                 initial={{ opacity: 0, y: -20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -95,7 +95,7 @@ const ContactForm = () => {
             )}
             {submitStatus === "error" && (
               <motion.div
-                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded"
+                className="bg-red-600 border-4 border-white text-white px-4 py-3 font-bold"
                 initial={{ opacity: 0, y: -20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -121,7 +121,7 @@ const ContactForm = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.4 }}
                   >
-                    <FormLabel className="text-[#212021] font-bold ml-2 text-base">
+                    <FormLabel className="text-white font-black ml-2 text-base uppercase">
                       What&apos;s your name?
                     </FormLabel>
                   </motion.div>
@@ -133,7 +133,7 @@ const ContactForm = () => {
                       <Input
                         placeholder="Type name..."
                         {...field}
-                        className="py-7 border-b border-[#212021] transition-all duration-300 focus:border-blue-500 focus:shadow-lg"
+                        className="py-7 border-b-4 border-white bg-[#131313] text-white placeholder:text-gray-500 transition-all duration-300 focus:border-[#FFCC00] focus:shadow-lg"
                       />
                     </motion.div>
                   </FormControl>
@@ -158,7 +158,7 @@ const ContactForm = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.6 }}
                   >
-                    <FormLabel className="text-[#212021] font-bold ml-2 text-base">
+                    <FormLabel className="text-white font-black ml-2 text-base uppercase">
                       What&apos;s your email address?
                     </FormLabel>
                   </motion.div>
@@ -170,7 +170,7 @@ const ContactForm = () => {
                       <Input
                         placeholder="Type email address..."
                         {...field}
-                        className="py-7 border-b border-[#212021] transition-all duration-300 focus:border-blue-500 focus:shadow-lg"
+                        className="py-7 border-b-4 border-white bg-[#131313] text-white placeholder:text-gray-500 transition-all duration-300 focus:border-[#FFCC00] focus:shadow-lg"
                       />
                     </motion.div>
                   </FormControl>
@@ -195,7 +195,7 @@ const ContactForm = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.8 }}
                   >
-                    <FormLabel className="text-[#212021] font-bold ml-2 text-base">
+                    <FormLabel className="text-white font-black ml-2 text-base uppercase">
                       What&apos;s your message?
                     </FormLabel>
                   </motion.div>
@@ -207,7 +207,7 @@ const ContactForm = () => {
                       <Textarea
                         placeholder="Type your message..."
                         {...field}
-                        className="border-b border-[#212021] h-60 transition-all duration-300 focus:border-blue-500 focus:shadow-lg"
+                        className="border-b-4 border-white bg-[#131313] text-white placeholder:text-gray-500 h-60 transition-all duration-300 focus:border-[#FFCC00] focus:shadow-lg"
                       />
                     </motion.div>
                   </FormControl>
@@ -230,7 +230,7 @@ const ContactForm = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#0838FF] rounded-[17px] px-3 py-5 w-[181px] h-[50px] text-white text-[17px] font-bold flex justify-evenly mt-14 transition-all duration-300 hover:bg-blue-600 hover:shadow-xl disabled:opacity-50 cursor-pointer"
+                className="bg-white border-4 border-white px-3 py-5 w-[181px] h-[50px] text-[#131313] text-[17px] font-black flex justify-evenly mt-14 transition-all duration-300 hover:bg-[#FFCC00] hover:border-[#FFCC00] hover:shadow-xl disabled:opacity-50 cursor-pointer uppercase"
               >
                 <motion.span
                   animate={isSubmitting ? { opacity: [1, 0.5, 1] } : {}}

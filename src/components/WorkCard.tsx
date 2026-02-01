@@ -46,7 +46,7 @@ const WorkCard = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.h1
-          className="font-bold text-4xl text-[#212021]"
+          className="font-black text-5xl text-white uppercase"
           variants={titleVariants}
         >
           My Work
@@ -76,11 +76,11 @@ const WorkCard = () => {
           {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              className={`group relative border border-[#212021] w-[320px] h-[480px] rounded-3xl overflow-hidden ${
+              className={`group relative border-4 border-white w-[320px] h-[480px] overflow-hidden ${
                 index % 2 === 0
-                  ? "self-start rotate-3 md:rotate-2"
-                  : "self-end -rotate-3 md:-rotate-2"
-              } mx-6 md:mx-0 shadow-xl`}
+                  ? "self-start rotate-2 md:rotate-1"
+                  : "self-end -rotate-2 md:-rotate-1"
+              } mx-6 md:mx-0 shadow-2xl bg-[#1a1a1a]`}
               variants={{
                 hidden: {
                   opacity: 0,
@@ -133,11 +133,11 @@ const WorkCard = () => {
               >
                 <Link href={project.github} target="_blank">
                   <motion.button
-                    className="px-4 py-2 cursor-pointer text-sm font-medium rounded-full border border-[#212021] md:bg-white/80"
+                    className="px-4 py-2 cursor-pointer text-sm font-bold uppercase border-2 border-white text-white bg-transparent"
                     whileHover={{
                       scale: 1.1,
-                      backgroundColor: "#212021",
-                      color: "#ffffff",
+                      backgroundColor: "#FFCC00",
+                      color: "#131313",
                       transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.95 }}
@@ -147,11 +147,10 @@ const WorkCard = () => {
                 </Link>
                 <Link href={project.demo} target="_blank">
                   <motion.button
-                    className="px-4 py-2 bg-blue-600/80 hover:bg-blue-500 text-white text-sm font-medium rounded-full border cursor-pointer"
+                    className="px-4 py-2 bg-white text-[#131313] text-sm font-bold uppercase border-2 border-white cursor-pointer"
                     whileHover={{
                       scale: 1.1,
-                      backgroundColor: "#3b82f6",
-                      boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)",
+                      backgroundColor: "#FFCC00",
                       transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.95 }}
@@ -220,12 +219,12 @@ const WorkCard = () => {
                   }}
                 >
                   <motion.h2
-                    className="text-xl font-bold text-[#212021]"
-                    whileHover={{ color: "#3b82f6" }}
+                    className="text-xl font-black text-white uppercase"
+                    whileHover={{ color: "#FFCC00" }}
                   >
                     {project.title}
                   </motion.h2>
-                  <motion.p className="text-[#212021] text-sm font-light">
+                  <motion.p className="text-white text-sm font-light">
                     {project.description}
                   </motion.p>
                 </motion.div>
@@ -247,7 +246,7 @@ const WorkCard = () => {
                   {project.tech.map((tech, techIndex) => (
                     <motion.span
                       key={techIndex}
-                      className="px-3 py-1 bg-[#212021] text-white text-xs font-semibold rounded-full"
+                      className="px-3 py-1 bg-white text-[#131313] text-xs font-bold uppercase border-2 border-white"
                       initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
@@ -259,7 +258,7 @@ const WorkCard = () => {
                       }}
                       whileHover={{
                         scale: 1.1,
-                        backgroundColor: "#3b82f6",
+                        backgroundColor: "#FFCC00",
                         transition: { duration: 0.2 },
                       }}
                     >

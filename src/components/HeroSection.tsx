@@ -61,7 +61,7 @@ const HeroSectionSection = () => {
 
       <div className="px-3 sm:px-4 md:px-6 lg:px-8">
         <motion.span
-          className="block h-px w-full bg-[#7B7B7B] mt-12 sm:mt-16 md:mt-20 max-w-7xl mx-auto"
+          className="block h-1 w-full bg-white mt-12 sm:mt-16 md:mt-20 max-w-7xl mx-auto"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 0.6 }}

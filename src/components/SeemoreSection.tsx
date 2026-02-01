@@ -21,8 +21,8 @@ const SeemoreSection = () => {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <motion.h1
-              className="text-[#212021] text-sm sm:text-base md:text-xl lg:text-2xl font-bold 
-                         group-hover:underline transition-all duration-200 group-hover:text-gray-700"
+              className="text-white text-sm sm:text-base md:text-xl lg:text-2xl font-black uppercase
+                         group-hover:bg-white group-hover:text-[#131313] px-3 py-1 transition-all duration-200"
               whileHover={{ x: -5 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >

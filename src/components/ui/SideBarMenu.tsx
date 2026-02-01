@@ -33,27 +33,22 @@ const SideBarMenu = ({ isOpen, toggleMenu }: SideBarMenuProps) => {
       )}
 
       <div
-        className={`fixed top-0 left-0 min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 shadow-2xl w-[320px] transform transition-all duration-300 ease-out z-50 ${
+        className={`fixed top-0 left-0 min-h-screen bg-[#131313] shadow-2xl w-[320px] transform transition-all duration-300 ease-out z-50 border-r-4 border-white ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="relative p-6 border-b border-slate-700/50">
+        <div className="relative p-6 border-b-4 border-white">
           <div className="flex items-center gap-4 pr-12">
             <div className="relative">
               <Link href="/">
-                <Image
-                  src="/images/logo.png"
-                  alt="logo"
-                  width={56}
-                  height={56}
-                  priority
-                  className="rounded-full ring-2 ring-blue-500/30"
-                />
+                <div className="w-14 h-14 border-3 border-white bg-white flex items-center justify-center font-black text-[#131313] text-sm">
+                  GY
+                </div>
               </Link>
             </div>
             <div className="flex flex-col">
-              <h1 className="text-lg font-bold text-white">Gemi Yudhia</h1>
-              <p className="text-sm text-slate-400 font-medium">
+              <h1 className="text-lg font-black text-white uppercase">Gemi Yudhia</h1>
+              <p className="text-sm text-white font-bold uppercase">
                 Frontend Developer
               </p>
             </div>
@@ -67,11 +62,11 @@ const SideBarMenu = ({ isOpen, toggleMenu }: SideBarMenuProps) => {
               <a
                 key={item.href}
                 href={item.href}
-                className="group flex items-center gap-4 px-4 py-3 rounded-xl text-slate-300 hover:text-white hover:bg-slate-700/50 transition-all duration-200 font-medium"
+                className="group flex items-center gap-4 px-4 py-3 text-white hover:text-[#131313] hover:bg-white transition-all duration-200 font-bold uppercase border-2 border-white"
               >
                 <Icon
                   size={20}
-                  className="text-slate-400 group-hover:text-blue-400 transition-colors duration-200"
+                  className="text-white group-hover:text-[#131313] transition-colors duration-200"
                 />
                 <span className="group-hover:translate-x-1 transition-transform duration-200">
                   {item.label}
@@ -81,8 +76,8 @@ const SideBarMenu = ({ isOpen, toggleMenu }: SideBarMenuProps) => {
           })}
         </nav>
 
-        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-slate-700/50">
-          <p className="text-xs text-slate-500 text-center mt-3">
+        <div className="absolute bottom-0 left-0 right-0 p-6 border-t-4 border-white">
+          <p className="text-xs text-white text-center mt-3 font-bold uppercase">
             © {year} Gemi Yudhia
           </p>
         </div>

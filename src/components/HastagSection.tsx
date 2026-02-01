@@ -65,7 +65,7 @@ const HastagSection = ({ className }: HastagSectionProps) => {
               {row.map((hashtag, hashtagIndex) => (
                 <motion.p
                   key={hashtag}
-                  className="text-[#7B7B7B] text-sm sm:text-base md:text-lg font-light whitespace-nowrap cursor-pointer"
+                  className="text-white text-sm sm:text-base md:text-lg font-bold whitespace-nowrap cursor-pointer border-2 border-white px-3 py-1 uppercase"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
@@ -76,7 +76,8 @@ const HastagSection = ({ className }: HastagSectionProps) => {
                   }}
                   whileHover={{
                     scale: 1.05,
-                    color: "#212021",
+                    backgroundColor: "#FFCC00",
+                    color: "#131313",
                     transition: { duration: 0.2 },
                   }}
                 >
@@ -86,7 +87,7 @@ const HastagSection = ({ className }: HastagSectionProps) => {
             </motion.div>
 
             <motion.span
-              className="block h-px w-full bg-[#7B7B7B] my-2 sm:my-3"
+              className="block h-1 w-full bg-white my-2 sm:my-3"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{

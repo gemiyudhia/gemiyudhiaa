@@ -17,7 +17,7 @@ const IntroductionSection = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.h1
-          className="font-bold text-4xl"
+          className="font-black text-5xl uppercase text-white"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -49,7 +49,7 @@ const IntroductionSection = () => {
       </motion.div>
 
       <motion.div
-        className="mt-6 border rounded-[36px] lg:rounded-[57px]"
+        className="mt-6 border-4 border-white bg-[#1a1a1a]"
         initial={{ opacity: 0, y: 50, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{
@@ -59,12 +59,12 @@ const IntroductionSection = () => {
         }}
         whileHover={{
           scale: 1.02,
-          boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+          boxShadow: "0 10px 30px rgba(255, 204, 0, 0.2)",
         }}
       >
         <div className="p-6">
           <motion.h1
-            className="font-bold text-[14px] md:text-2xl lg:text-3xl"
+            className="font-black text-[14px] md:text-2xl lg:text-3xl text-white uppercase"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
@@ -73,7 +73,7 @@ const IntroductionSection = () => {
           </motion.h1>
           <div className="lg:flex lg:justify-between lg:items-start">
             <motion.p
-              className="font-light text-[14px] mt-3 lg:w-[700px] lg:text-xl"
+              className="font-light text-[14px] mt-3 lg:w-[700px] lg:text-xl text-white"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}

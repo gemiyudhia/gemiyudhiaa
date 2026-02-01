@@ -12,10 +12,10 @@ const AboutCard = () => {
       transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       <motion.div
-        className="relative bg-[#212021] h-[560px] lg:h-[650px] w-full sm:max-w-[400px] rounded-[36px] p-6"
+        className="relative bg-white h-[560px] lg:h-[650px] w-full sm:max-w-[400px] border-4 border-white p-6"
         whileHover={{
           scale: 1.02,
-          boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
+          boxShadow: "0 20px 40px rgba(255, 204, 0, 0.3)",
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
@@ -23,9 +23,9 @@ const AboutCard = () => {
           src="/images/gemi-new.png"
           alt="profile"
           fill
-          className="object-cover rounded-[36px]"
+          className="object-cover"
         />
-        <div className="absolute inset-0 z-10 p-6 text-white flex justify-between flex-col h-full">
+        <div className="absolute inset-0 z-10 p-6 text-[#131313] flex justify-between flex-col h-full bg-white/10 backdrop-blur-sm">
           <motion.div
             className=""
             initial={{ opacity: 0, x: -30 }}
@@ -41,7 +41,7 @@ const AboutCard = () => {
               Hello,
             </motion.p>
             <motion.h3
-              className="font-semibold text-4xl w-[171px]"
+              className="font-black text-4xl w-[171px] uppercase"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
