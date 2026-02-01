@@ -16,41 +16,25 @@ const titleVariants = {
 
 const WorkCard = () => {
   return (
-    <motion.div
+    <motion.section
       className="mt-20"
-      variants={{
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.6, ease: "easeOut" },
-        },
-      }}
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {/* Header */}
-      <motion.div
-        className="flex justify-between items-center"
-        variants={{
-          hidden: { opacity: 0, y: 50 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.6, ease: "easeOut" },
-          },
-        }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <div className="flex justify-between items-center">
         <motion.h1
           className="font-bold text-4xl text-[#212021]"
           variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
           My Work
         </motion.h1>
+
         <motion.div
           animate={{ rotate: 360 }}
           transition={{
@@ -62,217 +46,135 @@ const WorkCard = () => {
         >
           <Image
             src="/images/seemore.png"
-            alt="work image"
+            alt="see more"
             width={40}
             height={40}
             priority
           />
         </motion.div>
-      </motion.div>
+      </div>
 
-      {/* Project Cards */}
+      {/* Project Grid */}
       <div className="my-20">
-        <div className="flex flex-col gap-36 md:grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 md:gap-16 md:place-items-center">
+        <div className="grid gap-16 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 place-items-center">
           {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              className={`group relative border border-[#212021] w-[320px] h-[480px] rounded-3xl overflow-hidden ${
-                index % 2 === 0
-                  ? "self-start rotate-3 md:rotate-2"
-                  : "self-end -rotate-3 md:-rotate-2"
-              } mx-6 md:mx-0 shadow-xl`}
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: 100,
-                  rotate: index % 2 === 0 ? 15 : -15,
-                  scale: 0.8,
-                },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  rotate: index % 2 === 0 ? 3 : -3,
-                  scale: 1,
-                  transition: {
-                    duration: 0.8,
-                    delay: index * 0.2,
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 15,
-                  },
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
+              className="
+                group relative
+                w-[320px] h-[480px]
+                rounded-3xl overflow-hidden
+                border border-[#212021]
+                bg-white
+                shadow-[12px_12px_0px_#000]
+              "
+              initial={{ opacity: 0, y: 60, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
               whileHover={{
-                scale: 1.05,
-                rotate: index % 2 === 0 ? 5 : -5,
-                y: -10,
-                transition: {
-                  duration: 0.3,
-                  type: "spring",
-                  stiffness: 300,
-                },
+                y: -8,
+                scale: 1.03,
+                boxShadow: "16px 16px 0px #000",
+                transition: { duration: 0.3 },
               }}
             >
               {/* Buttons */}
-              <motion.div
-                className="relative z-10 p-4 flex justify-between items-center"
-                variants={{
-                  hidden: { opacity: 0, y: -20 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.5,
-                      delay: index * 0.2 + 0.3,
-                    },
-                  },
-                }}
-              >
+              <div className="relative z-10 p-4 flex justify-between items-center">
                 <Link href={project.github} target="_blank">
                   <motion.button
-                    className="px-4 py-2 cursor-pointer text-sm font-medium rounded-full border border-[#212021] md:bg-white/80"
+                    className="px-4 py-2 text-sm font-medium rounded-full border border-[#212021] bg-white"
                     whileHover={{
-                      scale: 1.1,
                       backgroundColor: "#212021",
                       color: "#ffffff",
-                      transition: { duration: 0.2 },
+                      scale: 1.05,
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
                     Code
                   </motion.button>
                 </Link>
+
                 <Link href={project.demo} target="_blank">
                   <motion.button
-                    className="px-4 py-2 bg-blue-600/80 hover:bg-blue-500 text-white text-sm font-medium rounded-full border cursor-pointer"
+                    className="px-4 py-2 text-sm font-medium rounded-full bg-blue-600 text-white border"
                     whileHover={{
-                      scale: 1.1,
                       backgroundColor: "#3b82f6",
-                      boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)",
-                      transition: { duration: 0.2 },
+                      scale: 1.05,
+                      boxShadow: "0 10px 25px rgba(59,130,246,0.3)",
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
                     Demo
                   </motion.button>
                 </Link>
-              </motion.div>
+              </div>
 
               {/* Image */}
-              <motion.div
-                className="relative h-48 mx-4 mb-4 rounded-2xl overflow-hidden"
-                variants={{
-                  hidden: { opacity: 0, scale: 0.8 },
-                  visible: {
-                    opacity: 1,
-                    scale: 1,
-                    transition: {
-                      duration: 0.5,
-                      delay: index * 0.2 + 0.4,
-                    },
-                  },
-                }}
-              >
+              <div className="relative h-48 mx-4 mb-4 rounded-2xl overflow-hidden">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >
                   <Image
                     src={project.image || "/placeholder.svg"}
-                    alt="work image"
+                    alt={project.title}
                     width={330}
                     height={200}
                     priority
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
-              </motion.div>
+              </div>
 
-              {/* Text */}
-              <motion.div
-                className="relative z-10 px-6 pb-6 space-y-8"
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.5,
-                      delay: index * 0.2 + 0.5,
-                    },
-                  },
-                }}
-              >
-                <motion.div
-                  className="space-y-2"
-                  variants={{
-                    hidden: { opacity: 0 },
-                    visible: {
-                      opacity: 1,
-                      transition: {
-                        duration: 0.5,
-                        delay: index * 0.2 + 0.6,
-                      },
-                    },
-                  }}
-                >
+              {/* Content */}
+              <div className="px-6 pb-6 space-y-6">
+                <div>
                   <motion.h2
                     className="text-xl font-bold text-[#212021]"
                     whileHover={{ color: "#3b82f6" }}
                   >
                     {project.title}
                   </motion.h2>
-                  <motion.p className="text-[#212021] text-sm font-light">
+                  <p className="text-sm font-light text-[#212021] mt-2">
                     {project.description}
-                  </motion.p>
-                </motion.div>
+                  </p>
+                </div>
 
-                {/* Tech stack */}
-                <motion.div
-                  className="flex flex-wrap gap-2"
-                  variants={{
-                    hidden: { opacity: 0 },
-                    visible: {
-                      opacity: 1,
-                      transition: {
-                        duration: 0.5,
-                        delay: index * 0.2 + 0.8,
-                      },
-                    },
-                  }}
-                >
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
                     <motion.span
                       key={techIndex}
-                      className="px-3 py-1 bg-[#212021] text-white text-xs font-semibold rounded-full"
+                      className="px-3 py-1 text-xs font-semibold rounded-full bg-[#212021] text-white"
                       initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{
                         duration: 0.3,
-                        delay: index * 0.2 + 0.8 + techIndex * 0.1,
+                        delay: index * 0.15 + techIndex * 0.1,
                         type: "spring",
                         stiffness: 200,
                       }}
                       whileHover={{
                         scale: 1.1,
                         backgroundColor: "#3b82f6",
-                        transition: { duration: 0.2 },
                       }}
                     >
                       {tech}
                     </motion.span>
                   ))}
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 

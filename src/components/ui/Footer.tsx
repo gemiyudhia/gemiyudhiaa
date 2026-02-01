@@ -14,13 +14,12 @@ const Footer = () => {
 
   return (
     <motion.div
-      className="bg-[#212021] text-white overflow-hidden mt-20 min-h-full relative md:mb-6 md:rounded-2xl shadow"
+      className="bg-[#212021] text-white overflow-hidden mt-20 rounded-2xl min-h-full relative md:mb-6 shadow-[12px_12px_0px_#000]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ staggerChildren: 0.2, delayChildren: 0.1 }}
     >
-      {/* Content */}
       <div className="container mx-auto px-6 py-20 relative z-10">
         <motion.div
           className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12"
@@ -28,7 +27,6 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ staggerChildren: 0.2, delayChildren: 0.1 }}
         >
-          {/* Logo + text */}
           <motion.div
             className="text-center md:text-left"
             initial={{ opacity: 0, y: 30 }}
@@ -54,7 +52,6 @@ const Footer = () => {
             </motion.p>
           </motion.div>
 
-          {/* Social icons */}
           <div className="flex items-center gap-4">
             {[
               {
@@ -109,7 +106,6 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* Navigation */}
           <div className="flex items-center gap-8 text-sm">
             {[
               { href: "/about-me", label: "About me" },
@@ -149,7 +145,6 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Footer bottom */}
         <motion.div
           className="text-center pt-8 border-t border-gray-700/50"
           initial={{ opacity: 0, y: 30 }}

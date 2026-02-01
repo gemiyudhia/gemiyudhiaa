@@ -14,7 +14,7 @@ const HeroSectionSection = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="md:flex md:justify-center md:items-center md:gap-x-8 lg:gap-x-12 xl:gap-x-16 lg:mx-36">
+        <div className="md:flex md:justify-center md:items-center md:gap-x-8 lg:gap-x-12 xl:gap-x-16 lg:mx-36 ">
           <motion.div
             className="flex justify-center md:justify-end md:flex-1 order-1 md:order-2"
             initial={{ opacity: 0, x: 100, scale: 0.8 }}

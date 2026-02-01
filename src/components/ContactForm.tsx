@@ -27,7 +27,7 @@ const formSchema = z.object({
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
-    null
+    null,
   );
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -46,9 +46,7 @@ const ContactForm = () => {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
 
@@ -58,8 +56,7 @@ const ContactForm = () => {
       } else {
         setSubmitStatus("error");
       }
-    } catch (error) {
-      console.error("Error submitting form:", error);
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -67,202 +64,167 @@ const ContactForm = () => {
   }
 
   return (
-    <motion.div
+    <motion.section
       className="mt-28 max-w-2xl mx-auto"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <Form {...form}>
-        <motion.form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <AnimatePresence>
-            {submitStatus === "success" && (
-              <motion.div
-                className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded"
-                initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
-              >
-                Message sent successfully! We&apos;ll get back to you soon.
-              </motion.div>
-            )}
-            {submitStatus === "error" && (
-              <motion.div
-                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded"
-                initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
-              >
-                Failed to send message. Please try again.
-              </motion.div>
-            )}
-          </AnimatePresence>
+      <motion.div
+        className="
+          bg-white
+          border border-[#212021]
+          rounded-3xl
+          p-10
+          shadow-[12px_12px_0px_#000]
+        "
+        transition={{ duration: 0.3 }}
+      >
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10">
+            <AnimatePresence>
+              {submitStatus === "success" && (
+                <motion.div
+                  className="border border-green-600 bg-green-100 text-green-800 px-4 py-3 rounded-xl font-medium"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                >
+                  Message sent successfully. I&apos;ll get back to you soon.
+                </motion.div>
+              )}
+              {submitStatus === "error" && (
+                <motion.div
+                  className="border border-red-600 bg-red-100 text-red-800 px-4 py-3 rounded-xl font-medium"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                >
+                  Failed to send message. Please try again.
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 }}
-                  >
-                    <FormLabel className="text-[#212021] font-bold ml-2 text-base">
-                      What&apos;s your name?
-                    </FormLabel>
-                  </motion.div>
+                  <FormLabel className="text-[#212021] font-bold text-base">
+                    What&apos;s your name?
+                  </FormLabel>
                   <FormControl>
-                    <motion.div
-                      whileFocus={{ scale: 1.02 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Input
-                        placeholder="Type name..."
-                        {...field}
-                        className="py-7 border-b border-[#212021] transition-all duration-300 focus:border-blue-500 focus:shadow-lg"
-                      />
-                    </motion.div>
+                    <Input
+                      {...field}
+                      placeholder="Type your name"
+                      className="
+                        py-6
+                        border-b border-[#212021]
+                        focus:border-blue-500
+                        transition-all
+                      "
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.6 }}
-                  >
-                    <FormLabel className="text-[#212021] font-bold ml-2 text-base">
-                      What&apos;s your email address?
-                    </FormLabel>
-                  </motion.div>
+                  <FormLabel className="text-[#212021] font-bold text-base">
+                    What&apos;s your email?
+                  </FormLabel>
                   <FormControl>
-                    <motion.div
-                      whileFocus={{ scale: 1.02 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Input
-                        placeholder="Type email address..."
-                        {...field}
-                        className="py-7 border-b border-[#212021] transition-all duration-300 focus:border-blue-500 focus:shadow-lg"
-                      />
-                    </motion.div>
+                    <Input
+                      {...field}
+                      placeholder="Type your email"
+                      className="
+                        py-6
+                        border-b border-[#212021]
+                        focus:border-blue-500
+                        transition-all
+                      "
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-          >
             <FormField
               control={form.control}
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.8 }}
-                  >
-                    <FormLabel className="text-[#212021] font-bold ml-2 text-base">
-                      What&apos;s your message?
-                    </FormLabel>
-                  </motion.div>
-                  <FormControl className="mt-3">
-                    <motion.div
-                      whileFocus={{ scale: 1.02 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Textarea
-                        placeholder="Type your message..."
-                        {...field}
-                        className="border-b border-[#212021] h-60 transition-all duration-300 focus:border-blue-500 focus:shadow-lg"
-                      />
-                    </motion.div>
+                  <FormLabel className="text-[#212021] font-bold text-base">
+                    Your message
+                  </FormLabel>
+                  <FormControl>
+                    <Textarea
+                      {...field}
+                      placeholder="Write your message here..."
+                      className="
+                        h-56
+                        border-b border-[#212021]
+                        focus:border-blue-500
+                        transition-all
+                      "
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.9 }}
-          >
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2, type: "spring", stiffness: 300 }}
+              className="pt-6"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.96 }}
             >
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#0838FF] rounded-[17px] px-3 py-5 w-[181px] h-[50px] text-white text-[17px] font-bold flex justify-evenly mt-14 transition-all duration-300 hover:bg-blue-600 hover:shadow-xl disabled:opacity-50 cursor-pointer"
+                className="
+                  w-full
+                  h-[54px]
+                  rounded-2xl
+                  bg-[#0838FF]
+                  text-white
+                  font-bold text-base
+                  flex items-center justify-center gap-4
+                  shadow-[6px_6px_0px_#000]
+                  hover:shadow-[8px_8px_0px_#000]
+                  transition-all
+                  disabled:opacity-50
+                "
               >
-                <motion.span
-                  animate={isSubmitting ? { opacity: [1, 0.5, 1] } : {}}
-                  transition={{
-                    duration: 1,
-                    repeat: isSubmitting ? Number.POSITIVE_INFINITY : 0,
-                  }}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </motion.span>
+                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                 <motion.div
                   animate={isSubmitting ? { rotate: 360 } : {}}
                   transition={{
                     duration: 1,
-                    repeat: isSubmitting ? Number.POSITIVE_INFINITY : 0,
+                    repeat: isSubmitting ? Infinity : 0,
                     ease: "linear",
                   }}
                 >
                   <Image
                     src="/images/send.png"
-                    alt="send icon"
-                    width={40}
-                    height={40}
-                    priority
+                    alt="send"
+                    width={28}
+                    height={28}
                   />
                 </motion.div>
               </Button>
             </motion.div>
-          </motion.div>
-        </motion.form>
-      </Form>
-    </motion.div>
+          </form>
+        </Form>
+      </motion.div>
+    </motion.section>
   );
 };
 

@@ -12,11 +12,8 @@ const AboutCard = () => {
       transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       <motion.div
-        className="relative bg-[#212021] h-[560px] lg:h-[650px] w-full sm:max-w-[400px] rounded-[36px] p-6"
-        whileHover={{
-          scale: 1.02,
-          boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
-        }}
+        className="relative bg-[#212021] h-[560px] lg:h-[650px] w-full sm:max-w-[400px] rounded-[36px] p-6 shadow-[12px_12px_0px_#000]"
+     
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <Image

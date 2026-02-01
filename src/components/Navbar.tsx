@@ -48,7 +48,6 @@ const Navbar = () => {
             </motion.div>
           </Link>
 
-          {/* Mobile title */}
           {pathname === "/" ? (
             <h1 className="text-[#212021] text-sm sm:text-base font-bold w-[160px] sm:w-[190px] md:hidden leading-tight">
               Gemi Yudhia
@@ -59,7 +58,6 @@ const Navbar = () => {
             </h1>
           )}
 
-          {/* Desktop navigation - tampilkan navlinks jika BUKAN di route "/" */}
           {pathname !== "/" && (
             <div className="hidden md:flex items-center gap-x-6 lg:gap-x-9 ml-3 lg:ml-5 font-normal text-xl lg:text-2xl">
               <Link
@@ -117,86 +115,34 @@ const Navbar = () => {
             </div>
           )}
 
-          {/* Desktop title - tampilkan "Gemi Yudhia" jika di route "/" */}
           {pathname === "/" && (
             <div className="hidden md:flex items-center ml-3 lg:ml-5">
               <h1 className="text-[#212021] text-xl lg:text-2xl font-bold flex cursor-pointer">
-                {"Gemi Yudhia".split("").map((char, i) => (
-                  <motion.span
-                    key={i}
-                    whileHover={{
-                      y: -5,
-                      color: "#0838FF",
-                      transition: {
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      },
-                    }}
-                    className="inline-block"
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </motion.span>
-                ))}
+                Gemi Yudhia
               </h1>
             </div>
           )}
         </div>
 
         <div className="flex items-center gap-x-2 sm:gap-x-3">
-          {/* Hamburger menu - hanya tampil di mobile dan bukan di route "/" */}
           {pathname !== "/" && (
             <div className="md:hidden">
               <HamburgerMenu />
             </div>
           )}
 
-          {/* Desktop right side */}
           <div className="hidden md:block">
             {pathname === "/" ? (
               <h1 className="text-[#212021] text-xl lg:text-2xl font-bold flex cursor-pointer">
-                {"Frontend Developer Portfolio".split("").map((char, i) => (
-                  <motion.span
-                    key={i}
-                    whileHover={{
-                      y: -5,
-                      color: "#0838FF",
-                      transition: {
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      },
-                    }}
-                    className="inline-block"
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </motion.span>
-                ))}
+                Frontend Developer Portfolio
               </h1>
             ) : (
               <h1 className="text-[#212021] text-xl lg:text-2xl font-bold flex cursor-pointer">
-                {"Gemi Yudhia".split("").map((char, i) => (
-                  <motion.span
-                    key={i}
-                    whileHover={{
-                      y: -5,
-                      color: "#0838FF",
-                      transition: {
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      },
-                    }}
-                    className="inline-block"
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </motion.span>
-                ))}
+                Gemi Yudhia
               </h1>
             )}
           </div>
 
-          {/* Mobile right side - hanya tampil di route "/" */}
           {pathname === "/" && (
             <h1 className="text-[#212021] text-xs sm:text-sm font-bold uppercase md:hidden text-right leading-tight max-w-[140px] sm:max-w-[180px]">
               frontend developer portfolio
@@ -204,8 +150,6 @@ const Navbar = () => {
           )}
         </div>
       </nav>
-
-      <span className="block h-px container mx-auto bg-[#212021] my-2 sm:my-3"></span>
     </header>
   );
 };

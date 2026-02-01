@@ -102,10 +102,7 @@ const GetInTouch = () => {
                   social.gradient
                     ? `bg-gradient-to-br ${social.gradient}`
                     : social.bgColor
-                } self-center overflow-hidden`}
-                whileHover={{
-                  boxShadow: "0 15px 35px rgba(0, 0, 0, 0.3)",
-                }}
+                } self-center overflow-hidden shadow-[12px_12px_0px_#000]`}
               >
                 <div className="p-4 flex flex-col justify-between h-full">
                   <motion.div
@@ -115,10 +112,6 @@ const GetInTouch = () => {
                       delay: 0.5 + index * 0.1,
                       type: "spring",
                       stiffness: 300,
-                    }}
-                    whileHover={{
-                      scale: 1.1,
-                      rotate: 10,
                     }}
                   >
                     <Image
