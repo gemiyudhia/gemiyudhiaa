@@ -1,9 +1,11 @@
 import HeroSectionSection from "@/components/HeroSection";
+import Footer from "@/components/ui/Footer";
 
 export default function HomePage() {
   return (
-    <div className="container mx-auto px-3">
+    <main className="w-full min-h-screen bg-neo-yellow flex flex-col justify-between">
       <HeroSectionSection />
-    </div>
+      <Footer />
+    </main>
   );
 }

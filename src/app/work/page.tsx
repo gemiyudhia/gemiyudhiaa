@@ -3,12 +3,10 @@ import WorkCard from "@/components/WorkCard";
 
 const WorkPage = () => {
   return (
-    <>
-      <div className="md:container md:mx-auto md:px-3">
-        <WorkCard />
-        <Footer />
-      </div>
-    </>
+    <main className="w-full min-h-screen bg-[#F6F6EF] flex flex-col justify-between">
+      <WorkCard />
+      <Footer />
+    </main>
   );
 };
 

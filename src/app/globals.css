@@ -57,3 +57,45 @@
     --chart-5: 340 75% 55%;
   }
 }
+
+@theme {
+  --color-neo-lime: #AEFF36;
+  --color-neo-pink: #FFB7D5;
+  --color-neo-pink-dark: #D11A5B;
+  --color-neo-yellow: #FED815;
+  --color-neo-yellow-dark: #D4A500;
+  --color-neo-grey: #E5E5E5;
+}
+
+@utility border-brutal {
+  border: 4px solid #000000;
+}
+
+@utility border-brutal-md {
+  border: 3px solid #000000;
+}
+
+@utility border-brutal-sm {
+  border: 2px solid #000000;
+}
+
+@utility shadow-brutal {
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+@utility shadow-brutal-md {
+  box-shadow: 8px 8px 0px 0px #000000;
+}
+
+@utility shadow-brutal-lg {
+  box-shadow: 12px 12px 0px 0px #000000;
+}
+
+@utility shadow-brutal-xl {
+  box-shadow: 16px 16px 0px 0px #000000;
+}
+
+@utility transition-brutal {
+  transition: all 0.15s cubic-bezier(0, 0, 0, 1);
+}
+

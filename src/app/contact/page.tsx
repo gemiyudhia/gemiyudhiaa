@@ -4,12 +4,12 @@ import React from "react";
 
 const ContactMePage = () => {
   return (
-    <>
-      <div className="md:container md:mx-auto md:px-3">
+    <main className="w-full min-h-screen bg-[#F6F6EF] flex flex-col justify-between">
+      <div className="w-full py-12 px-2 sm:px-4 lg:px-8">
         <ContactForm />
-        <Footer />
       </div>
-    </>
+      <Footer />
+    </main>
   );
 };
 
