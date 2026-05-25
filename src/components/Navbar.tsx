@@ -1,156 +1,142 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Image from "next/image";
-import HamburgerMenu from "./ui/HamburgerMenu";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, MessageSquare } from "lucide-react";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [scrollPosition, setScrollPosition] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY > 10);
-    };
+  const navItems = [
+    { href: "/work", label: "PROYEK" },
+    { href: "/about-me", label: "CERITA GUA" },
+    { href: "/contact", label: "NGOBROL" },
+  ];
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const isLinkActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
 
   return (
-    <header
-      className={`pt-4 md:pt-6 lg:pt-8 px-3 transition-all ${
-        scrollPosition ? "backdrop-blur-md bg-[#F6F6EF]/50" : "bg-transparent"
-      }`}
-    >
-      <nav className="flex items-center justify-between px-3 container mx-auto">
-        <div className="flex items-center gap-x-2 sm:gap-x-3">
-          <Link href="/" className="flex-shrink-0">
-            <motion.div
+    <>
+      <header className="w-full bg-white border-b-[6px] border-black sticky top-0 z-50 transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          {/* Logo / Brand Name */}
+          <Link href="/" className="flex items-center">
+            <motion.span 
+              className="text-2xl sm:text-3xl font-black tracking-tighter text-black select-none"
+              whileHover={{ scale: 1.05, rotate: -1 }}
               whileTap={{ scale: 0.95 }}
-              whileHover={{
-                scale: 1.1,
-                rotate: 5,
-                transition: { type: "spring", stiffness: 400, damping: 10 },
-              }}
             >
-              <Image
-                src="/images/logo.png"
-                alt="logo"
-                width={40}
-                height={40}
-                className="sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
-                priority
-              />
-            </motion.div>
+              GEMI YUDHIA
+            </motion.span>
           </Link>
 
-          {pathname === "/" ? (
-            <h1 className="text-[#212021] text-sm sm:text-base font-bold w-[160px] sm:w-[190px] md:hidden leading-tight">
-              Gemi Yudhia
-            </h1>
-          ) : (
-            <h1 className="text-[#212021] text-sm sm:text-base font-bold w-[160px] sm:w-[190px] md:hidden leading-tight">
-              Frontend Developer Portfolio
-            </h1>
-          )}
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-x-6">
+            {navItems.map((item) => {
+              const active = isLinkActive(item.href);
+              return (
+                <Link key={item.href} href={item.href}>
+                  {active ? (
+                    <motion.div
+                      className="px-4 py-1.5 bg-neo-lime border-brutal-sm shadow-[3px_3px_0px_#000] text-black font-black text-sm tracking-wider uppercase"
+                      whileHover={{ y: -2, boxShadow: "5px 5px 0px #000000" }}
+                      whileTap={{ y: 1, boxShadow: "1px 1px 0px #000000" }}
+                    >
+                      {item.label}
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      className="px-4 py-1.5 text-black font-bold text-sm tracking-wider uppercase border border-transparent hover:border-black hover:bg-neo-pink hover:shadow-[3px_3px_0px_#000] transition-colors duration-150"
+                      whileHover={{ y: -2 }}
+                      whileTap={{ y: 0 }}
+                    >
+                      {item.label}
+                    </motion.div>
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
 
-          {pathname !== "/" && (
-            <div className="hidden md:flex items-center gap-x-6 lg:gap-x-9 ml-3 lg:ml-5 font-normal text-xl lg:text-2xl">
-              <Link
-                href="/about-me"
-                className="hover:text-gray-600 transition-colors duration-200 group relative"
-              >
-                <motion.span
-                  whileHover={{
-                    y: -5,
-                    scale: 1,
-                    rotate: 5,
-                    transition: { type: "spring", stiffness: 400, damping: 10 },
-                  }}
-                  className="inline-block"
-                >
-                  About me
-                </motion.span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#212021] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link
-                href="/work"
-                className="hover:text-gray-600 transition-colors duration-200 group relative"
-              >
-                <motion.span
-                  whileHover={{
-                    y: -5,
-                    scale: 1,
-                    rotate: -5,
-                    transition: { type: "spring", stiffness: 400, damping: 10 },
-                  }}
-                  className="inline-block"
-                >
-                  Work
-                </motion.span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#212021] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-
-              <Link
-                href="/contact"
-                className="hover:text-gray-600 transition-colors duration-200 group relative"
-              >
-                <motion.span
-                  whileHover={{
-                    y: -5,
-                    scale: 1,
-                    rotate: 5,
-                    transition: { type: "spring", stiffness: 400, damping: 10 },
-                  }}
-                  className="inline-block"
-                >
-                  Contact
-                </motion.span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#212021] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </div>
-          )}
-
-          {pathname === "/" && (
-            <div className="hidden md:flex items-center ml-3 lg:ml-5">
-              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold flex cursor-pointer">
-                Gemi Yudhia
-              </h1>
-            </div>
-          )}
-        </div>
-
-        <div className="flex items-center gap-x-2 sm:gap-x-3">
-          {pathname !== "/" && (
-            <div className="md:hidden">
-              <HamburgerMenu />
-            </div>
-          )}
-
+          {/* Desktop Call to Action Button */}
           <div className="hidden md:block">
-            {pathname === "/" ? (
-              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold flex cursor-pointer">
-                Frontend Developer Portfolio
-              </h1>
-            ) : (
-              <h1 className="text-[#212021] text-xl lg:text-2xl font-bold flex cursor-pointer">
-                Gemi Yudhia
-              </h1>
-            )}
+            <Link href="/contact">
+              <motion.button
+                className="px-5 py-2.5 bg-neo-lime text-black font-black border-brutal shadow-brutal text-sm tracking-wider uppercase flex items-center gap-x-2 transition-brutal"
+                whileHover={{
+                  y: -4,
+                  boxShadow: "8px 8px 0px #000000",
+                }}
+                whileTap={{
+                  y: 2,
+                  boxShadow: "2px 2px 0px #000000",
+                }}
+              >
+                GAS NGOBROL
+              </motion.button>
+            </Link>
           </div>
 
-          {pathname === "/" && (
-            <h1 className="text-[#212021] text-xs sm:text-sm font-bold uppercase md:hidden text-right leading-tight max-w-[140px] sm:max-w-[180px]">
-              frontend developer portfolio
-            </h1>
-          )}
+          {/* Mobile Hamburger Button */}
+          <div className="md:hidden flex items-center">
+            <motion.button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 border-brutal-sm bg-neo-lime text-black shadow-[3px_3px_0px_#000] focus:outline-none"
+              whileTap={{ scale: 0.9, y: 1, boxShadow: "1px 1px 0px #000" }}
+            >
+              {isOpen ? <X size={24} className="stroke-[3]" /> : <Menu size={24} className="stroke-[3]" />}
+            </motion.button>
+          </div>
         </div>
-      </nav>
-    </header>
+      </header>
+
+      {/* Mobile Brutalist Overlay Drawer */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-x-0 top-20 z-40 bg-neo-yellow border-b-[6px] border-black flex flex-col p-6 shadow-brutal-lg md:hidden"
+          >
+            <div className="flex flex-col gap-y-4">
+              {navItems.map((item) => {
+                const active = isLinkActive(item.href);
+                return (
+                  <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
+                    <motion.div
+                      className={`w-full py-3 px-4 text-center font-black text-lg tracking-wider border-brutal shadow-brutal transition-brutal ${
+                        active ? "bg-neo-lime text-black" : "bg-white text-black hover:bg-neo-pink"
+                      }`}
+                      whileTap={{ y: 2, boxShadow: "2px 2px 0px #000" }}
+                    >
+                      {item.label}
+                    </motion.div>
+                  </Link>
+                );
+              })}
+
+              <Link href="/contact" onClick={() => setIsOpen(false)}>
+                <motion.div
+                  className="w-full py-4 px-4 bg-black text-neo-lime text-center font-black text-lg tracking-wider border-brutal shadow-brutal flex items-center justify-center gap-x-2"
+                  whileTap={{ y: 2, boxShadow: "2px 2px 0px #000" }}
+                >
+                  <MessageSquare size={20} className="stroke-[3]" />
+                  GAS NGOBROL
+                </motion.div>
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
