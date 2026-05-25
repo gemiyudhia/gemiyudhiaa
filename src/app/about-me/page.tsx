@@ -8,9 +8,7 @@ import { Layers, Palette, Terminal, Zap, ArrowDown } from "lucide-react";
 const AboutMePage = () => {
   return (
     <main className="w-full min-h-screen bg-neo-yellow text-black font-sans flex flex-col justify-between transition-all duration-300">
-      
       <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8 w-full">
-        
         {/* ================= SECTION 1: HEADER & STORY ================= */}
         <div className="mb-6">
           <h1 className="text-5xl sm:text-6xl font-black tracking-tighter uppercase select-none italic text-black leading-none">
@@ -19,9 +17,8 @@ const AboutMePage = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
-          
           {/* Left Block: White Story Card */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-7 bg-white border-brutal shadow-brutal-lg p-6 sm:p-8 flex flex-col gap-y-4"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -29,18 +26,22 @@ const AboutMePage = () => {
             whileHover={{ y: -4, boxShadow: "16px 16px 0px #000" }}
           >
             <p className="text-base sm:text-lg font-bold text-black leading-relaxed">
-              Aku Gemi Yudhia, Full Stack Developer yang hobi ngulik di dunia digital. Filosofi aku simpel: kalo nggak berisik, berarti belum cukup keren. Aku suka bikin web yang nggak cuma jalan, tapi juga bikin orang melotot.
+              Aku Gemi Yudhia, Frontend Developer yang hobi ngulik di dunia
+              digital. Aku suka bikin web yang nggak cuma jalan, tapi juga bikin
+              orang melotot.
             </p>
             <p className="text-base sm:text-lg font-bold text-black leading-relaxed">
-              Dari zaman dulu pusing sama CSS floats sampe sekarang ngurusin sistem ribet, aku selalu penasaran sama &quot;gimana&quot; dan &quot;kenapa&quot;. Aku nggak cuma ngetik kode; aku ngerancang pengalaman seru yang nyambungin logika kaku sama perasaan manusia.
+              Dari zaman dulu pusing sama CSS floats sampe sekarang ngurusin
+              sistem ribet, aku selalu penasaran sama &quot;gimana&quot; dan
+              &quot;kenapa&quot;. Aku nggak cuma ngetik kode; aku ngerancang
+              pengalaman seru yang nyambungin logika kaku sama perasaan manusia.
             </p>
           </motion.div>
 
           {/* Right Block: Polaroid Card & Busy Badge */}
           <div className="lg:col-span-5 flex flex-col items-center lg:items-end w-full">
-            
             {/* Polaroid Frame */}
-            <motion.div 
+            <motion.div
               className="w-full sm:max-w-[340px] bg-white border-brutal shadow-brutal-lg p-4 rounded-lg flex flex-col items-center justify-between"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -50,7 +51,7 @@ const AboutMePage = () => {
               {/* Photo inside thin black frame */}
               <div className="relative w-full aspect-square bg-[#EEEEEE] border-brutal-sm rounded-md overflow-hidden mb-4">
                 <Image
-                  src="/images/gemi.png"
+                  src="/images/gemi-new.png"
                   alt="Gemi Yudhia Polaroid"
                   fill
                   className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"
@@ -66,49 +67,48 @@ const AboutMePage = () => {
             </motion.div>
 
             {/* Pink busy badge below Polaroid */}
-            <motion.div 
+            <motion.div
               className="mt-6 px-4 py-2.5 bg-neo-pink border-brutal-sm shadow-brutal select-none flex items-center gap-x-2 font-black uppercase text-xs sm:text-sm tracking-wide text-black w-fit rotate-[-3deg]"
               whileHover={{ scale: 1.05, rotate: 0 }}
             >
               <Terminal size={16} className="stroke-[3]" />
-              LAGI SIBUK: BIKIN TOOLS MASA DEPAN.
+              LAGI SIBUK: BELAJAR HAL BARU.
             </motion.div>
-
           </div>
-
         </div>
 
         {/* ================= SECTION 2: TIMELINE (JEJAK LANGKAH) ================= */}
         <div className="mb-12">
           <h2 className="text-4xl font-black tracking-tight uppercase select-none italic text-black flex items-center gap-x-2">
-            JEJAK LANGKAH
+            MILESTONES
             <ArrowDown size={28} className="stroke-[3]" />
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-20 items-stretch">
-          
           {/* Card 1: 2018 Awal Mula (Pink, spans 5 cols) */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-5 bg-neo-pink border-brutal shadow-brutal-md p-6 flex flex-col justify-between"
             whileHover={{ y: -4, boxShadow: "10px 10px 0px #000" }}
             transition={{ duration: 0.15 }}
           >
             <div>
               <div className="bg-neo-pink-dark text-white text-xs font-black px-2.5 py-1 uppercase tracking-wider border-brutal-sm shadow-[2px_2px_0px_#000] w-fit mb-4 select-none">
-                2018
+                2021
               </div>
               <h3 className="text-xl sm:text-2xl font-black tracking-tight leading-tight mb-3">
                 AWAL MULA NGOPI & NGODING
               </h3>
               <p className="text-sm font-bold text-black leading-relaxed">
-                Nemu asiknya logika di lab komputer berdebu. Perjalanan masuk ke dunia matriks dimulai dari perintah print yang paling simpel.
+                Nemu asiknya logika kodingan dari ngoding di hp. Perjalanan
+                masuk ke dunia ngoding dimulai dari perintah print yang paling
+                simpel.
               </p>
             </div>
           </motion.div>
 
           {/* Card 2: Gas Pol Full Stack (Green, spans 4 cols) */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-4 bg-neo-lime border-brutal shadow-brutal-md p-6 flex flex-col justify-between"
             whileHover={{ y: -4, boxShadow: "10px 10px 0px #000" }}
             transition={{ duration: 0.15 }}
@@ -118,7 +118,8 @@ const AboutMePage = () => {
                 GAS POL FULL STACK
               </h3>
               <p className="text-sm font-bold text-black leading-relaxed">
-                Bongkar framework modern, database, API, server, semua dihantam demi bisa nyelesaiin solusi komplit dari ujung ke ujung.
+                Bongkar framework modern, database, API, server, semua dihantam
+                demi bisa nyelesaiin solusi komplit dari ujung ke ujung.
               </p>
             </div>
             <div className="flex gap-x-2 mt-4 text-black">
@@ -128,7 +129,7 @@ const AboutMePage = () => {
           </motion.div>
 
           {/* Card 3: Jatuh Cinta Brutalisme (White, spans 3 cols) */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-3 bg-white border-brutal shadow-brutal-md p-6 flex flex-col justify-between text-center items-center"
             whileHover={{ y: -4, boxShadow: "10px 10px 0px #000" }}
             transition={{ duration: 0.15 }}
@@ -138,13 +139,16 @@ const AboutMePage = () => {
                 JATUH CINTA SAMA BRUTALISME
               </h3>
               <div className="w-16 h-16 border-brutal bg-[#EEEEEE] shadow-brutal flex items-center justify-center rotate-45 my-2">
-                <Palette size={28} className="stroke-[2.5] text-black -rotate-45" />
+                <Palette
+                  size={28}
+                  className="stroke-[2.5] text-black -rotate-45"
+                />
               </div>
             </div>
           </motion.div>
 
           {/* Card 4: Bikin Hal Keren (Yellow, spans wide - 12 cols) */}
-          <motion.div 
+          <motion.div
             className="lg:col-span-12 bg-neo-yellow border-brutal shadow-brutal-md p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6"
             whileHover={{ y: -4, boxShadow: "10px 10px 0px #000" }}
             transition={{ duration: 0.15 }}
@@ -154,14 +158,13 @@ const AboutMePage = () => {
                 BIKIN HAL KEREN
               </h3>
               <p className="text-sm sm:text-base font-bold text-black leading-relaxed">
-                Sekarang lagi fokus ngulik framework kencang sama desain UI yang eksperimental abis. Selalu siap buat proyek baru yang bikin otak berputar kreatif!
+                Selalu siap buat proyek baru yang bikin otak berputar kreatif!
               </p>
             </div>
             <div className="w-16 h-16 rounded-full border-brutal bg-white flex items-center justify-center text-3xl font-black select-none shrink-0">
               😎
             </div>
           </motion.div>
-
         </div>
 
         {/* ================= SECTION 3: YANG BIKIN AKU SEMANGAT ================= */}
@@ -172,9 +175,8 @@ const AboutMePage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-stretch">
-          
           {/* Card 01 (Black) */}
-          <motion.div 
+          <motion.div
             className="bg-[#111111] text-white border-brutal shadow-brutal-lg p-6 sm:p-8 flex flex-col justify-between min-h-[300px]"
             whileHover={{ y: -6, boxShadow: "16px 16px 0px #000" }}
             transition={{ duration: 0.2 }}
@@ -190,13 +192,15 @@ const AboutMePage = () => {
                 DESAIN BERANI BEDA
               </h3>
               <p className="text-xs sm:text-sm font-bold leading-relaxed text-[#CCCCCC]">
-                Aku males sama tren minimalis yang gitu-gitu aja. Desain itu harus jadi obrolan, pernyataan, dan sesekali bikin kaget. Aku bikin antarmuka yang nggak mungkin dicuekin.
+                Aku males sama tren minimalis yang gitu-gitu aja. Desain itu
+                harus jadi obrolan, pernyataan, dan sesekali bikin kaget. Aku
+                bikin antarmuka yang nggak mungkin dicuekin.
               </p>
             </div>
           </motion.div>
 
           {/* Card 02 (Green) */}
-          <motion.div 
+          <motion.div
             className="bg-neo-lime border-brutal shadow-brutal-lg p-6 sm:p-8 flex flex-col justify-between min-h-[300px]"
             whileHover={{ y: -6, boxShadow: "16px 16px 0px #000" }}
             transition={{ duration: 0.2 }}
@@ -212,13 +216,15 @@ const AboutMePage = () => {
                 NGODING RAPI
               </h3>
               <p className="text-xs sm:text-sm font-bold leading-relaxed text-black">
-                Luar boleh liar, dalem harus bener. Aku nulis kode yang rapi, gampang dikembangin, dan kokoh buat jadi fondasi eksperimen kreatif.
+                Luar boleh liar, dalem harus bener. Aku nulis kode yang rapi,
+                gampang dikembangin, dan kokoh buat jadi fondasi eksperimen
+                kreatif.
               </p>
             </div>
           </motion.div>
 
           {/* Card 03 (Pink) */}
-          <motion.div 
+          <motion.div
             className="bg-neo-pink border-brutal shadow-brutal-lg p-6 sm:p-8 flex flex-col justify-between min-h-[300px]"
             whileHover={{ y: -6, boxShadow: "16px 16px 0px #000" }}
             transition={{ duration: 0.2 }}
@@ -234,17 +240,16 @@ const AboutMePage = () => {
                 TERUS BERUBAH
               </h3>
               <p className="text-xs sm:text-sm font-bold leading-relaxed text-black">
-                Dunia teknologi gerak cepet banget. Aku tetep di depan dengan terus nabrak batas, belajar dari salah, dan bangun lagi yang lebih gokil dari sebelumnya.
+                Dunia teknologi gerak cepet banget. Aku tetep di depan dengan
+                terus nabrak batas, belajar dari salah, dan bangun lagi yang
+                lebih gokil dari sebelumnya.
               </p>
             </div>
           </motion.div>
-
         </div>
-
       </div>
 
       <Footer />
-
     </main>
   );
 };

@@ -35,7 +35,7 @@ const HeroSectionSection = () => {
           
           <div className="mt-6 inline-block bg-[#111111] text-white py-3 px-6 border-brutal-sm shadow-brutal self-start max-w-full">
             <p className="text-base sm:text-2xl font-black tracking-wide leading-tight uppercase">
-              Aku Bikin Sesuatu... kalo lagi mood
+              Aku Bikin Sesuatu... kalo lagi mood 😅
             </p>
           </div>
         </motion.div>
@@ -49,7 +49,7 @@ const HeroSectionSection = () => {
           whileHover={{ y: -4, boxShadow: "16px 16px 0px #000000" }}
         >
           <Image
-            src="/images/gemi.png"
+            src="/images/gemi-new.png"
             alt="Gemi Yudhia"
             fill
             priority
@@ -76,11 +76,11 @@ const HeroSectionSection = () => {
             <div className="flex items-center gap-x-2 mb-4">
               <Code2 size={24} className="stroke-[3]" />
               <h2 className="text-xl sm:text-2xl font-black tracking-wide uppercase">
-                FULL STACK
+                FRONTEND
               </h2>
             </div>
             <p className="text-sm sm:text-base font-bold leading-relaxed text-black">
-              Bongkar pasang kode dari 2018. Hidup dari pixel dan kopi pahit.
+              Bongkar pasang kode. Hidup dari kopi pahit.
             </p>
           </div>
         </motion.div>
@@ -97,7 +97,7 @@ const HeroSectionSection = () => {
             <div className="flex items-center gap-x-2 mb-4">
               <Paintbrush size={24} className="stroke-[3]" />
               <h2 className="text-xl sm:text-2xl font-black tracking-wide uppercase">
-                DESAINER UI
+                OTW DESAINER UI
               </h2>
             </div>
             <p className="text-sm sm:text-base font-bold leading-relaxed text-black">
@@ -143,7 +143,7 @@ const HeroSectionSection = () => {
           className="absolute -top-6 left-4 sm:left-12 z-20 px-4 py-2 bg-neo-pink-dark text-white font-black text-sm tracking-widest border-brutal shadow-brutal uppercase rotate-[-8deg] select-none"
           whileHover={{ scale: 1.1, rotate: -5 }}
         >
-          ASLI 100%
+          ASLI BOY 100%
         </motion.div>
 
         {/* TV Frame Container */}
@@ -171,7 +171,7 @@ const HeroSectionSection = () => {
             className="px-5 py-2.5 bg-neo-lime text-black font-black text-sm tracking-wider border-brutal shadow-brutal uppercase rotate-[6deg] select-none"
             whileHover={{ scale: 1.1, rotate: 2 }}
           >
-            NO AI-AI CLUB*
+            PASUKAN TITIK KOMA*
           </motion.div>
 
           <motion.div 

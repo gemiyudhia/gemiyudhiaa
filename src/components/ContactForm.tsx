@@ -96,7 +96,7 @@ const ContactForm = () => {
               </span>
             </h2>
             <p className="text-sm sm:text-base font-bold text-neutral-800 mt-6 leading-relaxed">
-              Lagi nyari partner buat proyek seru atau kerjaan kreatif. Kalo kamu pengen desain yang bikin orang nengok, hubungi aku.
+              Lagi nyari partner buat proyek seru atau kerjaan kreatif. Kalo kamu pengen kerjasama, hubungi aku.
             </p>
           </motion.div>
 
@@ -316,7 +316,7 @@ const ContactForm = () => {
                 className="px-5 py-2.5 bg-neo-yellow text-black font-black text-xs sm:text-sm tracking-wider border-brutal shadow-brutal uppercase rotate-[-4deg] select-none pointer-events-auto"
                 whileHover={{ scale: 1.1, rotate: 0 }}
               >
-                STAY DI JAKARTA, ID
+                STAY DI ACEH, ID
               </motion.div>
             </div>
             

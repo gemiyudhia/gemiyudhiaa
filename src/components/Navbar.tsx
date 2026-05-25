@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const navItems = [
     { href: "/work", label: "PROYEK" },
-    { href: "/about-me", label: "CERITA GUA" },
+    { href: "/about-me", label: "CERITA DIKIT" },
     { href: "/contact", label: "NGOBROL" },
   ];
 
