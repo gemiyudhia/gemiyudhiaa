@@ -25,7 +25,6 @@ const Navbar = () => {
     <>
       <header className="w-full bg-white border-b-[6px] border-black sticky top-0 z-50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          {/* Logo / Brand Name */}
           <Link href="/" className="flex items-center">
             <motion.span 
               className="text-2xl sm:text-3xl font-black tracking-tighter text-black select-none"
@@ -36,7 +35,6 @@ const Navbar = () => {
             </motion.span>
           </Link>
 
-          {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-x-6">
             {navItems.map((item) => {
               const active = isLinkActive(item.href);
@@ -64,7 +62,6 @@ const Navbar = () => {
             })}
           </nav>
 
-          {/* Desktop Call to Action Button */}
           <div className="hidden md:block">
             <Link href="/contact">
               <motion.button
@@ -83,7 +80,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Hamburger Button */}
           <div className="md:hidden flex items-center">
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
@@ -96,7 +92,6 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Mobile Brutalist Overlay Drawer */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

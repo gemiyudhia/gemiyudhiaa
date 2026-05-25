@@ -8,16 +8,13 @@ import { Wallet, Sparkles, Laptop, Bot, ArrowRight } from "lucide-react";
 const WorkCard = () => {
   return (
     <section className="w-full bg-[#F6F6EF] text-black font-sans py-12 px-4 sm:px-6 lg:px-8 transition-all duration-300">
-      {/* 1. Header Section */}
       <div className="max-w-6xl mx-auto mb-10">
-        {/* Title */}
         <div className="flex items-center gap-x-3 mb-4">
           <span className="text-3xl sm:text-4xl font-black">
             💼 PROYEK JAGOAN
           </span>
         </div>
 
-        {/* Subtitle with Left Border Stripe */}
         <div className="inline-block bg-[#E5E5E5]/40 border-brutal-sm border-l-[8px] border-l-neo-yellow py-3 px-6 select-none max-w-full">
           <p className="text-sm sm:text-base font-bold text-[#333333]">
             Kumpulan proyek digital yang dibuat karna gabut.
@@ -25,15 +22,12 @@ const WorkCard = () => {
         </div>
       </div>
 
-      {/* 2. Asymmetric Grid Section */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-        {/* CARD 1: ANTARMUKA NEO-BANKING (Lime Green, Spans 8 cols) */}
         <motion.div
           className="lg:col-span-8 bg-neo-lime border-brutal shadow-brutal-lg rounded-2xl p-6 sm:p-8 flex flex-col justify-between min-h-[380px]"
           whileHover={{ y: -6, boxShadow: "16px 16px 0px #000" }}
           transition={{ duration: 0.2 }}
         >
-          {/* Top content */}
           <div className="flex justify-between items-start">
             <div className="bg-black text-white text-xs font-black px-3 py-1.5 uppercase tracking-wider border-brutal-sm shadow-[2px_2px_0px_#000]">
               PILAHPINTAR
@@ -41,18 +35,16 @@ const WorkCard = () => {
             <Wallet size={28} className="text-black stroke-[2.5]" />
           </div>
 
-          {/* Title & Description */}
           <div className="my-6">
             <h3 className="text-2xl sm:text-4xl font-black tracking-tight leading-none text-black select-none">
-              ANTARMUKA PILAHPINTAR
+              Machine Learning & Website
             </h3>
             <p className="text-sm sm:text-base font-bold text-black mt-4 max-w-xl leading-relaxed">
-              Aplikasi web untuk mendeteksi sampah aja dan ngasih rekomendasi
-              daur ulang.
+              Aplikasi web untuk mendeteksi sampah gitu dan ngasih rekomendasi
+              daur ulang..
             </p>
           </div>
 
-          {/* Footer Action */}
           <div className="flex justify-end">
             <a
               href="https://pilahpintar.vercel.app"
@@ -70,13 +62,11 @@ const WorkCard = () => {
           </div>
         </motion.div>
 
-        {/* CARD 2: BRANDING CYBER-PUNK (Pink, Spans 4 cols, spans tall) */}
         <motion.div
           className="lg:col-span-4 bg-neo-pink border-brutal shadow-brutal-lg rounded-2xl p-6 flex flex-col justify-between min-h-[380px] lg:row-span-2"
           whileHover={{ y: -6, boxShadow: "16px 16px 0px #000" }}
           transition={{ duration: 0.2 }}
         >
-          {/* Top content */}
           <div className="flex justify-between items-start">
             <div className="bg-neo-pink-dark text-white text-xs font-black px-3 py-1.5 uppercase tracking-wider border-brutal-sm shadow-[2px_2px_0px_#000]">
               TALKY
@@ -84,14 +74,12 @@ const WorkCard = () => {
             <Sparkles size={28} className="text-black stroke-[2.5]" />
           </div>
 
-          {/* Title */}
           <div className="mt-4 mb-2">
             <h3 className="text-xl sm:text-2xl font-black tracking-tight leading-tight text-black flex items-center gap-x-2">
-              Aplikasi web untuk chatingan.
+              Aplikasi web untuk chatingan kayak aplikasi sebelah.
             </h3>
           </div>
 
-          {/* Description & Button */}
           <div className="mt-2">
             <p className="text-xs sm:text-sm font-bold text-black leading-relaxed mb-4">
               Aplikasi web untuk chatingan pakai identitas PIN kayak BBM dulu
@@ -114,13 +102,11 @@ const WorkCard = () => {
           </div>
         </motion.div>
 
-        {/* CARD 3: PIXEL REBELS (Yellow, Spans 4 cols) */}
         <motion.div
           className="lg:col-span-4 bg-neo-yellow border-brutal shadow-brutal-lg rounded-2xl p-6 flex flex-col justify-between min-h-[220px]"
           whileHover={{ y: -6, boxShadow: "16px 16px 0px #000" }}
           transition={{ duration: 0.2 }}
         >
-          {/* Top Info */}
           <div className="flex justify-between items-start">
             <div className="flex items-center gap-x-2">
               <Laptop size={24} className="stroke-[2.5]" />
@@ -130,7 +116,6 @@ const WorkCard = () => {
             </div>
           </div>
 
-          {/* Description & Button */}
           <div className="flex items-end justify-between mt-4">
             <div className="max-w-[70%]">
               <p className="text-xs sm:text-sm font-bold text-black leading-tight">
@@ -155,7 +140,6 @@ const WorkCard = () => {
           </div>
         </motion.div>
 
-        {/* CARD 4: UI AGEN AI (Grey, Spans 4 cols) */}
         <motion.div
           className="lg:col-span-4 bg-[#E5E5E5] border-brutal shadow-brutal-lg rounded-2xl p-6 flex flex-col items-center justify-center min-h-[220px] text-center"
           whileHover={{ y: -6, boxShadow: "16px 16px 0px #000" }}
@@ -181,10 +165,8 @@ const WorkCard = () => {
         </motion.div>
       </div>
 
-      {/* 3. Bottom 'MAU BIKIN SESUATU?' CTA Section */}
       <div className="max-w-6xl mx-auto mt-16">
         <div className="w-full bg-[#111111] border-brutal shadow-brutal-lg rounded-[20px] p-8 sm:p-12 md:p-16 flex flex-col md:flex-row md:items-center md:justify-between gap-10">
-          {/* Left Text details */}
           <div className="md:max-w-[60%]">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-neo-lime tracking-tighter leading-none select-none">
               MAU BIKIN SESUATU?
@@ -195,7 +177,6 @@ const WorkCard = () => {
             </p>
           </div>
 
-          {/* Right Action details */}
           <div className="flex flex-col items-start md:items-end gap-y-6">
             <Link href="/contact">
               <motion.button
@@ -207,7 +188,6 @@ const WorkCard = () => {
               </motion.button>
             </Link>
 
-            {/* Social Grid Block */}
             <div className="flex items-center gap-x-3 mt-2">
               <a
                 href="https://instagram.com/yuudhia"

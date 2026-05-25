@@ -16,14 +16,14 @@ import { Textarea } from "./ui/textarea";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { 
-  User, 
-  AtSign, 
-  MessageSquare, 
-  ArrowUpRight, 
-  Github, 
-  Linkedin, 
-  Instagram 
+import {
+  User,
+  AtSign,
+  MessageSquare,
+  ArrowUpRight,
+  Github,
+  Linkedin,
+  Instagram,
 } from "lucide-react";
 
 const formSchema = z.object({
@@ -73,15 +73,9 @@ const ContactForm = () => {
 
   return (
     <section className="max-w-6xl mx-auto py-4 px-2 sm:px-4 lg:px-8 text-black font-sans">
-      
-      {/* Two-Column Form Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-16">
-        
-        {/* ================= LEFT COLUMN: DETAILS & SOCIAL LINKS ================= */}
         <div className="lg:col-span-5 flex flex-col gap-y-6 justify-between">
-          
-          {/* Top Story card */}
-          <motion.div 
+          <motion.div
             className="bg-white border-brutal shadow-brutal-md p-6 sm:p-8 flex flex-col justify-center flex-1 min-h-[220px]"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -96,20 +90,18 @@ const ContactForm = () => {
               </span>
             </h2>
             <p className="text-sm sm:text-base font-bold text-neutral-800 mt-6 leading-relaxed">
-              Lagi nyari partner buat proyek seru atau kerjaan kreatif. Kalo kamu pengen kerjasama, hubungi aku.
+              Lagi nyari partner buat proyek seru atau kerjaan kreatif. Kalo
+              kamu pengen kerjasama, hubungi aku.
             </p>
           </motion.div>
 
-          {/* Social Links Cards (Stacked) */}
           <div className="flex flex-col gap-y-4">
-            
-            {/* Github Card */}
-            <a 
-              href="https://github.com/gemiyudhia" 
-              target="_blank" 
+            <a
+              href="https://github.com/gemiyudhia"
+              target="_blank"
               rel="noopener noreferrer"
             >
-              <motion.div 
+              <motion.div
                 className="bg-white border-brutal shadow-brutal-sm py-4 px-6 flex items-center justify-between font-black text-lg sm:text-xl tracking-tight text-black cursor-pointer"
                 whileHover={{ y: -3, boxShadow: "6px 6px 0px #000" }}
                 whileTap={{ y: 1 }}
@@ -122,13 +114,12 @@ const ContactForm = () => {
               </motion.div>
             </a>
 
-            {/* Linkedin Card */}
-            <a 
-              href="https://linkedin.com/in/gemiyudhia" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com/in/gemiyudhia"
+              target="_blank"
               rel="noopener noreferrer"
             >
-              <motion.div 
+              <motion.div
                 className="bg-neo-lime border-brutal shadow-brutal-sm py-4 px-6 flex items-center justify-between font-black text-lg sm:text-xl tracking-tight text-black cursor-pointer"
                 whileHover={{ y: -3, boxShadow: "6px 6px 0px #000" }}
                 whileTap={{ y: 1 }}
@@ -141,13 +132,12 @@ const ContactForm = () => {
               </motion.div>
             </a>
 
-            {/* Instagram Card */}
-            <a 
-              href="https://instagram.com/yuudhia" 
-              target="_blank" 
+            <a
+              href="https://instagram.com/yuudhia"
+              target="_blank"
               rel="noopener noreferrer"
             >
-              <motion.div 
+              <motion.div
                 className="bg-neo-pink border-brutal shadow-brutal-sm py-4 px-6 flex items-center justify-between font-black text-lg sm:text-xl tracking-tight text-black cursor-pointer"
                 whileHover={{ y: -3, boxShadow: "6px 6px 0px #000" }}
                 whileTap={{ y: 1 }}
@@ -159,13 +149,10 @@ const ContactForm = () => {
                 <ArrowUpRight size={24} className="stroke-[3]" />
               </motion.div>
             </a>
-
           </div>
-
         </div>
 
-        {/* ================= RIGHT COLUMN: BRUTALIST CONTACT FORM ================= */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-7 bg-white border-brutal shadow-brutal-lg p-6 sm:p-10 rounded-xl"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -174,7 +161,6 @@ const ContactForm = () => {
         >
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              
               <AnimatePresence>
                 {submitStatus === "success" && (
                   <motion.div
@@ -198,7 +184,6 @@ const ContactForm = () => {
                 )}
               </AnimatePresence>
 
-              {/* Name Field */}
               <FormField
                 control={form.control}
                 name="name"
@@ -220,7 +205,6 @@ const ContactForm = () => {
                 )}
               />
 
-              {/* Email Field */}
               <FormField
                 control={form.control}
                 name="email"
@@ -243,7 +227,6 @@ const ContactForm = () => {
                 )}
               />
 
-              {/* Message Field */}
               <FormField
                 control={form.control}
                 name="message"
@@ -266,7 +249,6 @@ const ContactForm = () => {
                 )}
               />
 
-              {/* Submit Button */}
               <div className="pt-2">
                 <motion.button
                   type="submit"
@@ -281,21 +263,18 @@ const ContactForm = () => {
                     boxShadow: "2px 2px 0px #000",
                   }}
                 >
-                  <span>{isSubmitting ? "LAGI NGIRIM..." : "GASKEUN KIRIM! >"}</span>
+                  <span>
+                    {isSubmitting ? "LAGI NGIRIM..." : "GASKEUN KIRIM! >"}
+                  </span>
                 </motion.button>
               </div>
-
             </form>
           </Form>
         </motion.div>
-
       </div>
 
-      {/* ================= BOTTOM BANNER SECTION: JAKARTA MAP ================= */}
       <div className="w-full mt-10 relative flex flex-col items-center">
-        
-        {/* City Frame Container */}
-        <motion.div 
+        <motion.div
           className="w-full bg-[#1A1A1A] border-brutal shadow-brutal-lg p-2.5 rounded-[16px] overflow-hidden"
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -309,22 +288,18 @@ const ContactForm = () => {
               fill
               className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"
             />
-            
-            {/* Center Yellow Tilted Badge */}
+
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <motion.div 
+              <motion.div
                 className="px-5 py-2.5 bg-neo-yellow text-black font-black text-xs sm:text-sm tracking-wider border-brutal shadow-brutal uppercase rotate-[-4deg] select-none pointer-events-auto"
                 whileHover={{ scale: 1.1, rotate: 0 }}
               >
                 STAY DI ACEH, ID
               </motion.div>
             </div>
-            
           </div>
         </motion.div>
-
       </div>
-
     </section>
   );
 };
