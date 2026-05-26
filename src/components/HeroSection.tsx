@@ -156,7 +156,7 @@ const HeroSectionSection = () => {
             className="px-5 py-2.5 bg-neo-lime text-black font-black text-sm tracking-wider border-brutal shadow-brutal uppercase rotate-[6deg] select-none"
             whileHover={{ scale: 1.1, rotate: 2 }}
           >
-            PASUKAN TITIK KOMA*
+            PASUKAN TITIK KOMA ;
           </motion.div>
 
           <motion.div
