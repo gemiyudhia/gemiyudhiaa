@@ -283,8 +283,8 @@ const ContactForm = () => {
         >
           <div className="relative w-full aspect-[21/9] sm:aspect-[16/6] bg-white rounded-lg overflow-hidden border-brutal-sm">
             <Image
-              src="/images/jakarta_map.png"
-              alt="Jakarta Map Drone Mockup"
+              src="/images/aceh.jpg"
+              alt="Aceh map drone"
               fill
               className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"
             />
