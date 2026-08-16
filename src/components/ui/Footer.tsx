@@ -1,8 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+
+const links = [
+  { label: "GitHub", href: "https://github.com/gemiyudhia" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/gemiyudhia" },
+  { label: "Instagram", href: "https://instagram.com/yuudhia" },
+];
 
 const Footer = () => {
   const [year, setYear] = useState<number>(2026);
@@ -12,46 +16,21 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="w-full bg-[#111111] border-t-[6px] border-black py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <Link href="/" className="flex items-center">
-          <motion.span
-            className="text-white text-xl sm:text-2xl font-black tracking-tight"
-            whileHover={{ scale: 1.05, rotate: 1 }}
-          >
-            GEMI YUDHIA
-          </motion.span>
-        </Link>
-
-        <div className="flex flex-wrap items-center justify-center gap-6 text-sm font-black tracking-wider uppercase text-white">
-          <a
-            href="https://github.com/gemiyudhia"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-neo-lime hover:underline transition-all"
-          >
-            GITHUB
-          </a>
-          <a
-            href="https://linkedin.com/in/gemiyudhia"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-neo-lime hover:underline transition-all"
-          >
-            LINKEDIN
-          </a>
-          <a
-            href="https://instagram.com/yuudhia"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-neo-lime hover:underline transition-all"
-          >
-            INSTAGRAM
-          </a>
-        </div>
-
-        <div className="text-center md:text-right font-black text-[11px] sm:text-xs tracking-wider uppercase text-[#888888] max-w-sm leading-tight">
-          HAK CIPTA © {year} GEMI YUDHIA. NO RIGHTS RESERVED. LOL.
+    <footer className="border-t border-hairline">
+      <div className="max-w-2xl mx-auto px-6 py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 font-mono text-xs text-graphite">
+        <span>© {year} Gemi Yudhia</span>
+        <div className="flex items-center gap-x-5">
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline pb-0.5 hover:text-ink"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
       </div>
     </footer>

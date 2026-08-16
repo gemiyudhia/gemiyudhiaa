@@ -3,99 +3,73 @@
 
 @layer base {
   :root {
-    --background: 60 28% 95%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-  }
+    --color-paper: #f7f6f2;
+    --color-ink: #16150f;
+    --color-graphite: #6b6960;
+    --color-hairline: #dedcd2;
+    --color-moss: #45624b;
+    --color-moss-soft: #eaeee6;
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: 60 14% 95%;
+    --foreground: 60 8% 8%;
+    --card: 60 14% 95%;
+    --card-foreground: 60 8% 8%;
+    --popover: 60 14% 95%;
+    --popover-foreground: 60 8% 8%;
+    --primary: 130 17% 30%;
+    --primary-foreground: 60 14% 97%;
+    --secondary: 60 10% 91%;
+    --secondary-foreground: 60 8% 8%;
+    --muted: 60 10% 91%;
+    --muted-foreground: 50 5% 43%;
+    --accent: 130 17% 30%;
+    --accent-foreground: 60 14% 97%;
+    --destructive: 6 60% 45%;
+    --destructive-foreground: 60 14% 97%;
+    --border: 60 10% 85%;
+    --input: 60 10% 85%;
+    --ring: 130 17% 30%;
+    --radius: 0.125rem;
   }
 }
 
 @theme {
-  --color-neo-lime: #AEFF36;
-  --color-neo-pink: #FFB7D5;
-  --color-neo-pink-dark: #D11A5B;
-  --color-neo-yellow: #FED815;
-  --color-neo-yellow-dark: #D4A500;
-  --color-neo-grey: #E5E5E5;
+  --color-paper: #f7f6f2;
+  --color-ink: #16150f;
+  --color-graphite: #6b6960;
+  --color-hairline: #dedcd2;
+  --color-moss: #45624b;
+  --color-moss-soft: #eaeee6;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@utility border-brutal {
-  border: 4px solid #000000;
+@layer base {
+  * {
+    border-color: var(--color-hairline);
+  }
+  html {
+    background: var(--color-paper);
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+  ::selection {
+    background: var(--color-moss);
+    color: var(--color-paper);
+  }
 }
 
-@utility border-brutal-md {
-  border: 3px solid #000000;
+@layer components {
+  .link-underline {
+    background-image: linear-gradient(var(--color-moss), var(--color-moss));
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease;
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
 }
-
-@utility border-brutal-sm {
-  border: 2px solid #000000;
-}
-
-@utility shadow-brutal {
-  box-shadow: 6px 6px 0px 0px #000000;
-}
-
-@utility shadow-brutal-md {
-  box-shadow: 8px 8px 0px 0px #000000;
-}
-
-@utility shadow-brutal-lg {
-  box-shadow: 12px 12px 0px 0px #000000;
-}
-
-@utility shadow-brutal-xl {
-  box-shadow: 16px 16px 0px 0px #000000;
-}
-
-@utility transition-brutal {
-  transition: all 0.15s cubic-bezier(0, 0, 0, 1);
-}
-
