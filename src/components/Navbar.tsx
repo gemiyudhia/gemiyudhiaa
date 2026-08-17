@@ -13,7 +13,10 @@ const navItems = [
 const Navbar = () => {
   const pathname = usePathname();
 
-  const isLinkActive = (href: string) => pathname.startsWith(href);
+  if (pathname === '/') return null;
+  const isLinkActive = (href: string) => {
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   return (
     <header className="w-full bg-paper/95 backdrop-blur border-b border-hairline">
@@ -34,9 +37,7 @@ const Navbar = () => {
             );
           })}
         </nav>
-
       </div>
-
     </header>
   );
 };

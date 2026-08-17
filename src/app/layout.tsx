@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gemi",
+  title: "Gemi Yudhia",
   description:
     "Portfolio Gemi Yudhia.",
   keywords: [

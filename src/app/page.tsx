@@ -1,11 +1,9 @@
-import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/ui/Footer";
+import HeroSection from '@/components/HeroSection';
 
 export default function HomePage() {
   return (
-    <main className="w-full min-h-screen flex flex-col justify-between">
+    <main className="w-full flex">
       <HeroSection />
-      <Footer />
     </main>
   );
 }
