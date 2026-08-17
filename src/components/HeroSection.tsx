@@ -11,7 +11,7 @@ const HeroSection = () => {
         {' '}
         <Link href="/about-me" className="text-moss link-underline">
           {' '}
-          Tentang aku →{' '}
+          About Me →{' '}
         </Link>{' '}
         <Link href="/achievements" className="text-moss link-underline">
           {' '}
@@ -24,6 +24,10 @@ const HeroSection = () => {
         <Link href="/til" className="text-moss link-underline">
           {' '}
           Today I Learned →{' '}
+        </Link>{' '}
+        <Link href="/contact-me" className="text-moss link-underline">
+          {' '}
+          Contact Me →{' '}
         </Link>{' '}
       </div>
     </section>

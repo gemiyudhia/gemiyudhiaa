@@ -8,6 +8,7 @@ const navItems = [
   { href: '/achievements', label: 'Achievements' },
   { href: '/work', label: 'Projects' },
   { href: '/til', label: 'TIL' },
+  { href: '/contact-me', label: 'Contact Me' },
 ];
 
 const Navbar = () => {

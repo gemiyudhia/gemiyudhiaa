@@ -5,7 +5,7 @@ const AboutMePage = () => {
     <main className="w-full min-h-screen flex flex-col justify-between">
       <section className="max-w-2xl mx-auto px-6 py-16 sm:py-24">
         <h1 className="font-mono text-sm uppercase tracking-wider text-graphite mb-6">
-          Tentang Saya
+          Tentang
         </h1>
         <div className="space-y-4 text-base sm:text-lg text-ink/90 leading-relaxed max-w-xl">
           <p>
