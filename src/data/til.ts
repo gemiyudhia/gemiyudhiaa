@@ -157,4 +157,21 @@ export const tilData: TilEntry[] = [
     note: 'Hal seperti Git branch, API, authentication, atau database yang sekarang terasa lebih familiar dulunya juga pernah membuat bingung. Mengingat proses itu membantu melihat bahwa kemampuan memang dibangun sedikit demi sedikit.',
     tag: 'Journey',
   },
+{
+  title: 'Uang yang sama belum tentu memiliki nilai yang sama',
+  note: 'Belajar tentang inflasi membuatku sadar bahwa mempertahankan jumlah uang secara nominal tidak berarti mempertahankan daya belinya. Dari situ aku mulai melihat uang bukan hanya sebagai angka di rekening, tetapi sebagai sesuatu yang nilainya dipengaruhi oleh waktu.',
+  tag: 'Finance',
+},
+{
+  title: 'Investasi adalah bentuk menunda konsumsi',
+  note: 'Investasi ternyata bukan sekadar membeli saham atau reksadana. Pada dasarnya, aku menukar sebagian kepuasan hari ini dengan harapan mendapatkan nilai yang lebih besar di masa depan.',
+  tag: 'Finance',
+},
+{
+  title: 'Skill juga merupakan bentuk investasi',
+  note: 'Setelah memahami konsep investasi, aku sadar bahwa waktu yang digunakan untuk belajar juga bisa dianggap sebagai investasi. Mengorbankan waktu sekarang untuk membangun skill dapat meningkatkan kemampuan menghasilkan uang di masa depan.',
+  tag: 'Mindset',
+},
+
+
 ];
