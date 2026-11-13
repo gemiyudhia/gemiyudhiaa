@@ -12,9 +12,6 @@ const socials = [
 const ContactForm = () => {
   return (
     <section className="max-w-2xl mx-auto px-6 py-16 sm:py-24">
-      <h1 className="font-mono text-sm uppercase tracking-wider text-graphite mb-6">
-        Contact
-      </h1>
       <p className="text-base text-ink/90 leading-relaxed max-w-xl mb-10">
         Ada project, kolaborasi, atau sekadar mau ngobrol?
       </p>

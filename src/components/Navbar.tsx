@@ -13,8 +13,6 @@ const navItems = [
 
 const Navbar = () => {
   const pathname = usePathname();
-
-  if (pathname === '/') return null;
   const isLinkActive = (href: string) => {
     return pathname === href || pathname.startsWith(`${href}/`);
   };

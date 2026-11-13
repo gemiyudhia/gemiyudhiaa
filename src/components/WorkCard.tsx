@@ -1,23 +1,17 @@
-import { ArrowUpRight } from "lucide-react";
-import { projectsData } from "@/data/projects";
+import { ArrowUpRight } from 'lucide-react';
+import { projectsData } from '@/data/projects';
 
 const WorkCard = () => {
   return (
     <section className="max-w-2xl mx-auto px-6 py-16 sm:py-24">
-      <h1 className="font-mono text-sm uppercase tracking-wider text-graphite mb-10">
-        Projects
-      </h1>
-
       <ol className="divide-y divide-hairline border-t border-b border-hairline">
         {projectsData.map((project, index) => (
           <li key={project.title} className="py-6">
             <div className="flex items-baseline gap-x-3">
               <span className="font-mono text-xs text-graphite shrink-0">
-                {String(index + 1).padStart(2, "0")}
+                {String(index + 1).padStart(2, '0')}
               </span>
-              <h2 className="text-base sm:text-lg text-ink">
-                {project.title}
-              </h2>
+              <h2 className="text-base sm:text-lg text-ink">{project.title}</h2>
             </div>
 
             <p className="mt-2 ml-8 text-sm text-graphite leading-relaxed max-w-md">

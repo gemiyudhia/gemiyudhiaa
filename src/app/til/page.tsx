@@ -5,9 +5,6 @@ const TilPage = () => {
   return (
     <main className="w-full min-h-screen flex flex-col justify-between">
       <section className="max-w-2xl mx-auto px-6 py-16 sm:py-24">
-        <h1 className="font-mono text-sm uppercase tracking-wider text-graphite mb-3">
-          TIL
-        </h1>
         <p className="text-sm text-graphite mb-10 max-w-xl">
           Today I Learned — catatan singkat setiap kali nemu hal baru soal
           coding, tools, atau apa pun yang worth diingat.
