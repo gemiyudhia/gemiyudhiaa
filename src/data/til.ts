@@ -172,6 +172,10 @@ export const tilData: TilEntry[] = [
   note: 'Setelah memahami konsep investasi, aku sadar bahwa waktu yang digunakan untuk belajar juga bisa dianggap sebagai investasi. Mengorbankan waktu sekarang untuk membangun skill dapat meningkatkan kemampuan menghasilkan uang di masa depan.',
   tag: 'Mindset',
 },
-
+{
+  title: 'Makna dari investasi',
+  note: 'Investasi itu bukan untuk menjadi kaya namun untuk mencapai tujuan keuangan (Raditya Dika)',
+  tag: 'Finance',
+},
 
 ];
