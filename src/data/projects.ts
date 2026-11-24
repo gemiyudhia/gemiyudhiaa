@@ -64,4 +64,12 @@ export const projectsData: Project[] = [
     github: 'https://github.com/gemiyudhia/new-movie-project',
     demo: 'https://movie-project-sandy-nu.vercel.app/',
   },
+  {
+    title: 'WhatCanICook',
+    description:
+      'Aplikasi mobile yang dirancang untuk membantu pengguna menemukan inspirasi resep masakan berdasarkan bahan makanan yang tersedia di rumah. Aplikasi ini menyediakan fitur pencocokan bahan dengan resep, pengelolaan daftar bahan makanan, eksplorasi resep, dan penyimpanan resep favorit. Saat ini, aplikasi masih menggunakan data mock untuk mendemonstrasikan fitur utama dan pengalaman pengguna, dengan integrasi backend sebagai pengembangan selanjutnya.',
+    tech: ['React Native', 'Expo', 'Typescript', 'NativeWind'],
+    github: 'https://github.com/gemiyudhia/whatcanicook-mobile',
+    demo: '-',
+  },
 ];
